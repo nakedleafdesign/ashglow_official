@@ -147,7 +147,7 @@
 
 .container {
   
-  @include container-fixed;
+  //@include container-fixed;
   max-width: 100%;
   
   @media (min-width: $screen-sm-min) {
