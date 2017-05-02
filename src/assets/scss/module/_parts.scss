@@ -92,6 +92,21 @@ category: heading
   }
 }
 
+.heading01{
+  &--white{
+    @extend .heading01;
+    color: #fff;
+  }
+  &__head--white{
+    @extend .heading01__head;
+    color: #fff;
+  }
+  &__lead--white{
+    @extend .heading01__lead;
+    color: #fff;
+  }
+}
+
 
 /*--------------------------------------------------------------//
 // @ paragraph
