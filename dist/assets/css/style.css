@@ -21,6 +21,7 @@ category: index
 // @ base styles
 // ============================================================ */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300i");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2592,73 +2593,50 @@ p {
 // ============================================================ */
 .container--full {
   width: 100%;
-  min-width: 1100px; }
+  min-width: 1200px; }
 
 /* @ メインコンテナー
 // ------------------------------ */
-.container-main {
-  margin-top: 50px; }
-
-.container-main__inner {
-  display: -webkit-box;
-  display: flex;
-  -js-display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-flow: row wrap;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  margin: 0 auto;
-  padding: 0 50px;
-  width: 100%;
-  max-width: 1100px; }
-  .container-main__inner__primary {
-    width: 75%; }
-  .container-main__inner__secondary {
-    width: 22%; }
+.top-main-container {
+  margin-top: 550px;
+  background: #fff; }
 
 /* @ 汎用コンテナ
 // ------------------------------ */
 .container__inner {
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0 130px;
   width: 100%;
-  max-width: 1100px; }
+  min-width: 1200px; }
 
 .container__inner--sp-full {
   margin: 0 auto;
   padding: 0 50px;
   width: 100%;
-  max-width: 1100px; }
+  max-width: 1400px; }
 
 .container__inner--md-full {
   margin: 0 auto;
   padding: 0 50px;
   width: 100%;
-  max-width: 1100px; }
+  max-width: 1400px; }
 
 .section-container {
   margin: 0 auto;
   width: 100%;
-  min-width: 1100px;
+  min-width: 1400px;
   margin-bottom: 80px; }
 
 .main-content__inner {
   margin: 0 auto;
   padding: 50px 105px;
   width: 100%;
-  max-width: 1100px; }
+  max-width: 1400px; }
 
 .section-unit {
   padding: 50px 0; }
   .section-unit:first-child {
     padding-top: 0; }
-
-/*--------------------------------------------------------------//
-// @ bootstrap class container overwrite
-// ------------------------------------------------------------ */
-.container {
-  max-width: 100%; }
 
 /* ============================================================ //
 // @ parts styles
@@ -2717,217 +2695,24 @@ category: heading
 
 */
 .heading01-unit {
-  margin-bottom: 2.5em; }
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 30px; }
 
 .heading01 {
-  position: relative;
-  top: -.6em;
   text-align: center;
-  font-size: 1.666666667em;
-  font-family: Sawarabi Mincho;
-  color: #966e12;
-  border-bottom: 2px solid #c7a974;
-  font-weight: normal; }
-  .heading01:before {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    content: "";
-    width: 25px;
-    height: 16px;
-    background: url("../img/common/heading01_icon_left.png") center center no-repeat #fff;
-    background-size: cover; }
-  .heading01:after {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -2px;
-    content: "";
-    width: 25px;
-    height: 16px;
-    background: url("../img/common/heading01_icon_right.png") center center no-repeat #fff;
-    background-size: cover; }
-  .heading01__inner {
-    position: relative;
-    bottom: -.45em;
-    padding: 0 1em;
-    background: #fff; }
-  .heading01__lead {
+  font-family: "Ryumin Medium KL", YuMincho, "Yu Mincho", serif;
+  font-size: 28px;
+  line-height: 1.2; }
+  .heading01__head {
+    font-family: "Open Sans", sans-serif;
     text-align: center;
-    margin: -.3em 0 0;
-    font-size: .933333333em;
-    line-height: 1.2; }
-
-.heading01.heading01--white {
-  color: #fff;
-  border-color: #fff; }
-  .heading01.heading01--white:before, .heading01.heading01--white:after {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -2px;
-    content: "";
-    width: 25px;
-    height: 16px; }
-  .heading01.heading01--white:before {
-    background: url("../img/common/heading01_icon_left--white.png") center center no-repeat #715a2b;
-    background-size: cover; }
-  .heading01.heading01--white:after {
-    background: url("../img/common/heading01_icon_right--white.png") center center no-repeat #715a2b;
-    background-size: cover; }
-  .heading01.heading01--white .heading01__inner {
-    background: #715a2b; }
-
-.heading01__lead.heading01__lead--white {
-  color: #fff; }
-
-/*doc
----
-title: 見出し2
-name: heading02
-category: heading
----
-
-```html_example
-
-<h2 class="heading02">見出しタイプ2</h2>
-
-```
-
-
-*/
-.heading02 {
-  text-align: center;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  padding: .4em 0 .35em;
-  line-height: 1.2;
-  font-size: 1.333333333em;
-  color: #333;
-  margin-bottom: 1.5em; }
-
-/*doc
----
-title: 見出し3
-name: heading03
-category: heading
----
-
-```html_example
-
-<h3 class="haeding03">お電話からご依頼</h3>
-
-```
-
-*/
-.haeding03 {
-  position: relative;
-  font-size: 1.133333333em;
-  font-family: Sawarabi Mincho;
-  color: #715a2b;
-  margin-bottom: 1em;
-  padding-left: 20px;
-  font-weight: normal; }
-  .haeding03:before {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0%, -50%);
-            transform: translate(0%, -50%);
-    left: 0;
-    content: "\e900";
     line-height: 1;
-    speak: none;
-    font-family: 'myicon';
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    font-size: 18px;
-    color: #715a2b; }
-  .haeding03.heading03--white {
-    color: #fff; }
-  .haeding03.heading03--white:before {
-    color: #fff; }
-
-/*doc
----
-title: 見出し4
-name: heading04
-category: heading
----
-
-```html_example
-
-<h4 class="heading04">お電話からご依頼</h4>
-
-```
-
-*/
-.heading04 {
-  padding-bottom: .3em;
-  border-bottom: 1px solid #333;
-  font-size: 1.2em;
-  line-height: 1.2;
-  margin-bottom: 1em; }
-
-.heading04.heading04--white {
-  color: #fff;
-  border-color: #fff; }
-
-/*doc
----
-title: タイトル
-name: heading05
-category: heading
----
-
-
-```html_example
-
-<h5 class="heading05">お電話からご依頼</h5>
-
-```
-
-*/
-.heading05 {
-  display: block;
-  margin: 1em 0;
-  border-left: 3px solid #a78c53;
-  padding-left: .5em;
-  font-size: 18px; }
-
-/*doc
----
-title: title heading
-name: title-heading
-category: heading
----
-
-
-```html_example
-
-<h1 class="title-heading">ダミータイトル</h1>
-
-```
-
-*/
-.title-heading {
-  position: relative;
-  font-size: 1.466666667em;
-  font-family: Sawarabi Mincho;
-  border-bottom: 1px solid #aaa;
-  color: #715a2b;
-  padding: 0 0 .2em .2em;
-  margin: 1em 0 1.5em; }
-  .title-heading:before {
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 1px;
-    background: #aaa;
-    content: ''; }
+    margin-bottom: 50px; }
+  .heading01__lead {
+    margin-top: 8px;
+    text-align: center;
+    color: #999; }
 
 /*--------------------------------------------------------------//
 // @ paragraph
@@ -3502,7 +3287,7 @@ a.text-link--under-none {
   font-size: .8em; }
 
 .text-caption {
-  color: #999999;
+  color: #999;
   font-size: 14px;
   line-height: 1.714285714; }
 
@@ -3642,9 +3427,17 @@ category: box
 /* ============================================================ //
 // @ navigation style
 // ============================================================ */
-/* ============================================================ //
-// @ main visual
-// ============================================================ */
+.main-visual {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: url(../../assets/img/top/mv.jpg) center top no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 550px; }
+
 /* ============================================================ //
 // @ key visual
 // ============================================================ */
@@ -3760,6 +3553,45 @@ category: box
 /* ============================================================ //
 // @ top.html
 // ============================================================ */
+.sec-brand {
+  z-index: 2;
+  position: relative;
+  padding: 70px 0 150px;
+  background: #fff;
+  overflow: hidden; }
+  .sec-brand:before {
+    z-index: -1;
+    position: absolute;
+    display: block;
+    content: '';
+    width: 710px;
+    height: 1170px;
+    border: 25px solid #f9f9f9;
+    top: 53px;
+    left: 130px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+
+.sec-brand-heading-unit {
+  margin-bottom: 70px; }
+
+.sec-brand-grid-group {
+  display: -webkit-box;
+  display: flex;
+  -js-display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between; }
+  .sec-brand-grid-group .grid:first-child {
+    width: 50%;
+    padding: 0 60px 0 40px;
+    border-right: 1px solid #ccc; }
+  .sec-brand-grid-group .grid:last-child {
+    width: 50%;
+    padding: 0 40px 0 60px; }
+
 /*--------------------------------------------------------------//
 // @ text align
 // ------------------------------------------------------------ */
@@ -3844,7 +3676,7 @@ category: box
   color: #888888 !important; }
 
 .color-lighter {
-  color: #999999 !important; }
+  color: #999 !important; }
 
 .color-primary {
   color: #337ab7 !important; }
@@ -3912,7 +3744,7 @@ category: box
   background-color: #888888 !important; }
 
 .bg-lighter {
-  background-color: #999999 !important; }
+  background-color: #999 !important; }
 
 .bg-primary {
   background-color: #337ab7 !important; }
@@ -3992,50 +3824,6 @@ category: utility
   .container--full{
     min-width: 100%;
     overflow-x: hidden; }
-  .container-main{
-    padding-top: 30px; }
-  .container-main__inner{
-    max-width: 100%;
-    padding: 0 20px; }
-  .container-main__inner__primary{
-    width: 100%; }
-  .container-main__inner__secondary{
-    width: 100%; }
-  .container__inner{
-    max-width: 100%;
-    padding: 0 20px; }
-  .container__inner--sp-full{
-    max-width: 100%;
-    padding: 0 20px; }
-  .container__inner--md-full{
-    max-width: 100%;
-    padding: 0; }
-  .section-container{
-    max-width: 100%;
-    min-width: 100%;
-    margin-bottom: 50px; }
-  .main-content__inner{
-    max-width: 100%;
-    padding: 30px 20px; }
-  .main-content__inner{
-    padding: 20px 3%; }
-  .section-unit{
-    padding: 40px 0; }
-  .heading01{
-    display: -webkit-box;
-    display: flex;
-    -js-display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-flow: row wrap;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    font-size: 1.466666667em; }
-  .haeding03{
-    display: inline-block;
-    font-size: 1.2em; }
   .hidden--md{
     display: none !important; }
   .visible--md{
@@ -4046,31 +3834,6 @@ category: utility
 @media screen and (max-width: 414px){
   html{
     font-size: 13px; }
-  .container-main{
-    padding-top: 10px; }
-  .container-main__inner{
-    padding: 0 3.125%; }
-  .container__inner{
-    padding: 0 3.125%; }
-  .container__inner--sp-full{
-    padding: 0; }
-  .section-container{
-    margin-bottom: 50px; }
-  .section-unit{
-    padding: 30px 0; }
-  .heading01-unit{
-    margin-bottom: 2em; }
-  .heading01{
-    top: 0;
-    font-size: 1.3em;
-    padding-bottom: .2em; }
-  .heading01__inner{
-    padding: 0 1em; }
-  .heading01__lead{
-    font-size: .857142857em;
-    margin: .8em 0 0; }
-  .haeding03{
-    font-size: 1.142857143em; }
   .table01 th, .table02 th, .table01 td, .table02 td{
     padding: .5em .3em; }
   .table01 tr, .table02 tr, .table01 td, .table02 td, .table01 th, .table02 th{
@@ -4121,14 +3884,5 @@ category: utility
 @media screen and (max-width: 1100px){
   body{
     overflow-x: visible; } }
-@media (min-width: 414px){
-  .container{
-    width: 750px; } }
-@media (min-width: 769px){
-  .container{
-    width: 990px; } }
-@media (min-width: 1100px){
-  .container{
-    width: 990px; } }
 
 /*# sourceMappingURL=style.css.map */

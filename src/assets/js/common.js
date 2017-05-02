@@ -144,30 +144,13 @@ $(function () {
   // @ hiraku.js
   // ------------------------------------------------------------
 
-  $(".js-offcanvas").hiraku({
-    btn: ".js-offcanvas-btn",
-    fixedHeader: ".js-header-fixed",
-    direction: "right",
-    breakpoint: 769
-  });
-
-  /* @ tile.js
-  // ------------------------------------------------------------ */
-  // 参考 : http://urin.github.io/jquery.tile.js/
-
-
-  if ($('.js-tile').length) {
-    $('.js-tile').tile();
-    $(window).resize(function () {
-      $('.js-tile').tile();
-    });
-  }
-  if ($('.js-tab-menu').length) {
-    $('.js-tab-menu').tile();
-    $(window).resize(function () {
-      $('.js-tile').tile();
-    });
-  }
+  // $(".js-offcanvas").hiraku({
+  //   btn: ".js-offcanvas-btn",
+  //   fixedHeader: ".js-header-fixed",
+  //   direction: "right",
+  //   breakpoint: 769
+  // });
+  
 
 
   /* @ accorion

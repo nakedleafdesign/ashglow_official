@@ -4,4 +4,40 @@
 
 
 
-
+.sec-brand{
+  z-index: 2;
+  position: relative;
+  padding: 70px 0 150px;
+  background: #fff;
+  overflow: hidden;
+  &:before{
+    z-index: -1;
+    position: absolute;
+    display: block;
+    content: '';
+    width:710px;
+    height: 1170px;
+    border: 25px solid #f9f9f9;
+    top: 53px;
+    left: 130px;
+    transform: rotate(45deg);
+  }
+}
+.sec-brand-heading-unit{
+  margin-bottom: 70px;
+}
+.sec-brand-grid-group{
+  display: flex;
+  -js-display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  .grid:first-child{
+    width: 50%;
+    padding:0 60px 0 40px;
+    border-right:1px solid #ccc;
+  }
+  .grid:last-child{
+    width: 50%;
+    padding:0 40px 0 60px;
+  }
+}
