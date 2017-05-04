@@ -3,11 +3,12 @@ var activeFlag = 'is-active';
 $(function () {
   $('.js-youtube-slider').sliderPro({
     width: 320,
+    height:180,
     arrows: true,
     buttons: false,
     slideDistance:20,
     visibleSize: '100%',
-    imageScaleMode : 'contain',
+    imageScaleMode : 'contain'
   });
 
 
@@ -33,6 +34,7 @@ $(function () {
 
       $('.js-instagram-slider').sliderPro({
         width: 180,
+        height:180,
         arrows: true,
         buttons: false,
         slideDistance:15,

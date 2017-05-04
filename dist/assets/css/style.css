@@ -2722,6 +2722,12 @@ category: heading
 .heading01__lead--white {
   color: #fff; }
 
+.heading03 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: "Ryumin Medium KL", YuMincho, "Yu Mincho", serif; }
+
 /*--------------------------------------------------------------//
 // @ paragraph
 // ------------------------------------------------------------ */
@@ -3628,6 +3634,12 @@ category: box
   padding: 70px 0 120px;
   background: url(../../assets/img/top/section_media_bg.jpg) center center no-repeat;
   background-size: cover; }
+
+.heading03--top {
+  color: #999; }
+
+.js-youtube-slider {
+  margin-bottom: 70px; }
 
 /*--------------------------------------------------------------//
 // @ text align
