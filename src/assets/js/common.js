@@ -1,5 +1,7 @@
 var tabW = 768;
+var spW = 414;
 var activeClass = 'is-active';
+
 
 
 $(function () {
@@ -10,18 +12,24 @@ $(function () {
   var $header = $('.js-header-hidden__header');
   var $mainContent = $('.js-header-hidden__content');
   var mainContentPos = $mainContent.offset().top;
+  var winW = $(window).width();
+
 
   $(window).scroll(function () {
+    console.log(winW);
+    if (winW > spW) {
 
-    var winScrollTop = $(window).scrollTop();
+      var winScrollTop = $(window).scrollTop();
 
-    if(mainContentPos < winScrollTop){
-      $header.addClass('is-hidden');
-    }else{
-      $header.removeClass('is-hidden');
+      if (mainContentPos < winScrollTop) {
+        $header.addClass('is-hidden');
+      } else {
+        $header.removeClass('is-hidden');
+      }
     }
 
   });
+
 
 
   // @ ページ内リンクスムーススクロール

@@ -18,8 +18,12 @@
   //margin-top: 600px;
   margin-top:100vh;
   background: #fff;
+  position: relative;
+  z-index: 1;
   @include max-media($screen-sm){
     margin-top:45.8333333%;
+    position: relative;
+    top:$header-hight;
   }
 }
 
