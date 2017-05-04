@@ -5,10 +5,10 @@
 .container--full {
   width: 100%;
   min-width: 1200px;
-  //@include max-media($screen-md) {
-  //  min-width: 100%;
-  //  overflow-x: hidden;
-  //}
+  @include max-media($screen-sm) {
+    min-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 /* @ メインコンテナー
@@ -30,6 +30,10 @@
   padding: 0 130px;
   width: 100%;
   min-width: 1200px;
+  @include max-media($screen-sm){
+    padding:0 4%;
+    min-width:100%;
+  }
 }
 
 .container__inner--sp-full {

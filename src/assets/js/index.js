@@ -8,7 +8,15 @@ $(function () {
     buttons: false,
     slideDistance:20,
     visibleSize: '100%',
-    imageScaleMode : 'contain'
+    imageScaleMode : 'contain',
+    shuffle:true,
+    autoHeight:true,
+    breakpoints: {
+      415: {//表示方法を変えるサイズ
+        width: '75%',
+        slideDistance:10
+      }
+    }
   });
 
 
@@ -40,6 +48,14 @@ $(function () {
         slideDistance:15,
         visibleSize: '100%',
         imageScaleMode : 'contain',
+        shuffle:true,
+        autoHeight:true,
+        breakpoints: {
+          415: {//表示方法を変えるサイズ
+            width: '25%',
+            slideDistance:10
+          }
+        }
       });
     }
   });

@@ -6,6 +6,7 @@ $(function () {
 
   // @ ヘッダー非表示
   // ------------------------------------------------------------
+
   var $header = $('.js-header-hidden__header');
   var $mainContent = $('.js-header-hidden__content');
   var mainContentPos = $mainContent.offset().top;

@@ -79,11 +79,17 @@ category: heading
   font-family:$font-family-ryumin;
   font-size: 28px;
   line-height: 1.2;
+  @include max-media($screen-sm){
+    font-size: 20px;
+  }
   &__head{
     font-family:$open-sans;
     text-align: center;
     line-height: 1;
     margin-bottom:50px;
+    @include max-media($screen-sm){
+      margin-bottom: 30px;
+    }
   }
   &__lead{
     margin-top: 8px;
@@ -111,6 +117,9 @@ category: heading
   font-size: 18px;
   margin-bottom: 20px;
   font-family:$font-family-ryumin;
+  @include max-media($screen-sm){
+    font-size: 16px;
+  }
 }
 
 /*--------------------------------------------------------------//
