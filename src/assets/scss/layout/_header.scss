@@ -1,3 +1,29 @@
 /* ============================================================ //
 // @ header
 // ============================================================ */
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  &__inner{
+    padding:15px 30px 20px;
+  }
+}
+.header.is-hidden{
+  opacity:0;
+}
+.header-group{
+  display: flex;
+  -js-display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items:center;
+}
+.h-logo{
+  width: 160px;
+  img{
+    width: 100%;
+    vertical-align: bottom;
+  }
+}

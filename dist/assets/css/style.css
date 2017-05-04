@@ -2597,7 +2597,7 @@ p {
 /* @ メインコンテナー
 // ------------------------------ */
 .top-main-container {
-  margin-top: 550px;
+  margin-top: 100vh;
   background: #fff; }
 
 /* @ 汎用コンテナ
@@ -3441,6 +3441,34 @@ category: box
 /* ============================================================ //
 // @ navigation style
 // ============================================================ */
+.gnav {
+  margin-top: -5px; }
+
+.gnav-body {
+  display: -webkit-box;
+  display: flex;
+  -js-display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  list-style: none; }
+
+.gnav-item a {
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 .75em;
+  line-height: 1;
+  font-family: "Ryumin Medium KL", YuMincho, "Yu Mincho", serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7), -1px 1px 1px rgba(0, 0, 0, 0.7), 1px -1px 1px rgba(0, 0, 0, 0.7), -1px -1px 1px rgba(0, 0, 0, 0.7);
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .gnav-item a:hover {
+    opacity: 0.7; }
+  .gnav-item a:link, .gnav-item a:active, .gnav-item a:hover, .gnav-item a:visited, .gnav-item a:focus {
+    color: #fff;
+    text-decoration: none; }
+
 .main-visual {
   z-index: -1;
   position: fixed;
@@ -3450,7 +3478,7 @@ category: box
   background: url(../../assets/img/top/mv.jpg) center top no-repeat;
   background-size: cover;
   width: 100%;
-  height: 550px; }
+  height: 85vh; }
 
 /* ============================================================ //
 // @ key visual
@@ -3569,6 +3597,34 @@ category: box
 /* ============================================================ //
 // @ header
 // ============================================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0; }
+  .header__inner {
+    padding: 15px 30px 20px; }
+
+.header.is-hidden {
+  opacity: 0; }
+
+.header-group {
+  display: -webkit-box;
+  display: flex;
+  -js-display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center; }
+
+.h-logo {
+  width: 160px; }
+  .h-logo img {
+    width: 100%;
+    vertical-align: bottom; }
+
 /* ============================================================ //
 // @ sidebar
 // ============================================================ */

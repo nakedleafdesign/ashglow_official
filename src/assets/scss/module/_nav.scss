@@ -1,3 +1,37 @@
 /* ============================================================ //
 // @ navigation style
 // ============================================================ */
+
+.gnav{
+  margin-top:-5px;
+}
+.gnav-body{
+  display: flex;
+  -js-display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+}
+.gnav-item{
+  a{
+    $shadow-color: rgba(0,0,0,.7);
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    padding:0 .75em;
+    line-height: 1;
+    font-family:$font-family-ryumin;
+    text-shadow: 1px 1px 1px $shadow-color,
+    -1px 1px 1px $shadow-color,
+    1px -1px 1px $shadow-color,
+    -1px -1px 1px $shadow-color;
+    @include link-hover();
+    &:link,
+    &:active,
+    &:hover,
+    &:visited,
+    &:focus{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

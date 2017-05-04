@@ -1,7 +1,27 @@
 var tabW = 768;
 var activeClass = 'is-active';
 
+
 $(function () {
+
+  // @ ヘッダー非表示
+  // ------------------------------------------------------------
+  var $header = $('.js-header-hidden__header');
+  var $mainContent = $('.js-header-hidden__content');
+  var mainContentPos = $mainContent.offset().top;
+
+  $(window).scroll(function () {
+
+    var winScrollTop = $(window).scrollTop();
+
+    if(mainContentPos < winScrollTop){
+      $header.addClass('is-hidden');
+    }else{
+      $header.removeClass('is-hidden');
+    }
+
+  });
+
 
   // @ ページ内リンクスムーススクロール
   // ------------------------------------------------------------
