@@ -3641,6 +3641,85 @@ category: box
 .js-youtube-slider {
   margin-bottom: 70px; }
 
+.sec-news {
+  padding: 70px 0 120px; }
+
+.sec-news-heading-unit {
+  margin-bottom: 70px; }
+
+.sec-news-grid-group {
+  display: -webkit-box;
+  display: flex;
+  -js-display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between; }
+  .sec-news-grid-group .grid {
+    width: 44.68085%;
+    padding: 50px 10px; }
+
+.top-news-item {
+  border-top: 1px solid #eee;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  .top-news-item::before, .top-news-item::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #aaa;
+    -webkit-transition: .3s;
+    transition: .3s; }
+  .top-news-item::before {
+    top: 0;
+    left: 0; }
+  .top-news-item::after {
+    bottom: 0;
+    right: 0; }
+  .top-news-item:first-child, .top-news-item:nth-child(2) {
+    border-top: none; }
+  .top-news-item:hovre {
+    border-top: none; }
+  .top-news-item:hover::before, .top-news-item:hover::after {
+    width: 100%; }
+  .top-news-item a {
+    display: -webkit-box;
+    display: flex;
+    -js-display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+    .top-news-item a:link, .top-news-item a:active, .top-news-item a:hover, .top-news-item a:visited, .top-news-item a:focus {
+      color: #333;
+      text-decoration: none; }
+    .top-news-item a:hover {
+      position: relative;
+      -webkit-transform: translate(10px, 0%);
+              transform: translate(10px, 0%); }
+  .top-news-item__date {
+    width: 23.80952%;
+    font-size: .933333333em;
+    line-height: 1; }
+  .top-news-item__content {
+    width: 76.19048%; }
+  .top-news-item-content__ttl {
+    line-height: 1;
+    margin-bottom: .75em;
+    font-size: 1.066666667em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .top-news-item-content__text {
+    margin-bottom: 0;
+    font-size: .933333333em; }
+
 /*--------------------------------------------------------------//
 // @ text align
 // ------------------------------------------------------------ */
