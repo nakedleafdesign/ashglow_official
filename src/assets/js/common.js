@@ -191,7 +191,7 @@ $(function () {
   $(window).load(function () {
     setTimeout(function(){
       $step01.fadeOut(800);
-    },500);
+    },3000);
     setTimeout(function () {
       $step02.fadeIn(800);
     },1300);
