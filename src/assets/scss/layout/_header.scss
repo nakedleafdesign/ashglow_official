@@ -9,6 +9,11 @@ $img_path: "../../assets/img/";
   top: 0;
   left: 0;
   z-index: 99999;
+  @include max-media($screen-sm){
+  box-shadow: 2px 0px 5px rgba(0,0,0,.4);
+    
+    opacity:.95;
+  }
   &__inner{
     padding:15px 30px 20px;
     @include max-media($screen-sm){

@@ -139,7 +139,7 @@ $(function () {
     tTrigger.removeClass(activeClass);
     $("[rel^='" + accordion_activeTab + "']").addClass(activeClass);
   });
-  
+
 
   // @ hiraku.js
   // ------------------------------------------------------------
@@ -165,6 +165,26 @@ $(function () {
     $(this).toggleClass(activeClass);
     $(this).closest(accordionCotainer).find(accordionContent).slideToggle();
   });
+
+  // @
+  // ------------------------------------------------------------
+
+  var $loadLayer = $('.js-loading-layer__layer');
+  var $loadContent = $('.js-loading-layer__content');
+  var $loadIcon = $('.js-loading-layer__icon');
+
+  setTimeout(function(){
+    $loadIcon.addClass('icon-level-warning');
+  },1500);
+  setTimeout(function(){
+    $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
+  },10000);
+
+  $(window).load(function () {
+    $loadLayer.delay(900).fadeOut(800);
+    $loadContent.css('display', 'block');
+  });
+
 
 
 });
