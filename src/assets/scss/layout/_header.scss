@@ -2,6 +2,8 @@
 // @ header
 // ============================================================ */
 
+$img_path: "../../assets/img/";
+
 .header{
   position: fixed;
   top: 0;
@@ -16,8 +18,9 @@
   @include max-media($screen-sm){
     z-index: 99999;
     height: $header-hight;
-    background: #333;
+    background: #fff;
   }
+  
 }
 .header.is-hidden{
   display: none;
@@ -27,20 +30,20 @@
   -js-display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  
   align-items:center;
 }
 .h-logo{
-  width: 160px;
+  background: center center no-repeat;
+  @include bgimgx2('common/h-logo.png');
+  background-size:contain;
   @include max-media($screen-sm){
-    width: 70px;
+    position: relative;
+    top: 1px;
+    @include bgimgx2('common/h-logo-black.png');
+    background-size:contain;
+    width: 74px;
+    height:$header-hight;
     line-height:$header-hight;
-  }
-  img{
-    width: 100%;
-    vertical-align: bottom;
-    @include max-media($screen-sm){
-      vertical-align: middle;
-      margin-top: -6px;
-    }
   }
 }

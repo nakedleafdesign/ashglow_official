@@ -40,6 +40,7 @@ $(function () {
       // @ 読み込み完了後にスライダーを起動
       // ------------------------------
 
+
       $('.js-instagram-slider').sliderPro({
         width: 180,
         height:180,

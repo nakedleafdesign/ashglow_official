@@ -42,8 +42,9 @@ gulp.task('scss', function(){
         .pipe($.sass(
             {
               functions: assetFunctions({
-                images_path: assetsDir + '/img',
-                http_images_path: "/img"
+                // todo 治す
+                images_path:'./' + assetsDir + 'img',
+                http_images_path: "/assets/img"
               })
             }
         ))

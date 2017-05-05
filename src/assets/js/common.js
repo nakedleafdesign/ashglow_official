@@ -6,7 +6,8 @@ var activeClass = 'is-active';
 
 $(function () {
 
-  // @ ヘッダー非表示
+
+  // @ ヘッダー非表示 js-header-hidden
   // ------------------------------------------------------------
 
   var $header = $('.js-header-hidden__header');
@@ -16,24 +17,20 @@ $(function () {
 
 
   $(window).scroll(function () {
-    console.log(winW);
     if (winW > spW) {
-
       var winScrollTop = $(window).scrollTop();
-
       if (mainContentPos < winScrollTop) {
         $header.addClass('is-hidden');
       } else {
         $header.removeClass('is-hidden');
       }
     }
-
   });
-
-
 
   // @ ページ内リンクスムーススクロール
   // ------------------------------------------------------------
+
+
   $('a[href^="#"]').click(function () {
     var speed = 400; // ミリ秒
     var href = $(this).attr("href");
@@ -43,29 +40,32 @@ $(function () {
     return false;
   });
 
-  // @ fadein content
+
+  // @ to-top
   // ------------------------------------------------------------
 
   var showFlag = false;
-  var topBtn = $('.js-fixed-fnav');
+  var topBtn = $('.js-to-top');
   topBtn.css('bottom', '-100px');
-
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > 150) {
 
       if (showFlag == false) {
         showFlag = true;
-        topBtn.stop().animate({'bottom': '0px'}, 200);
+        topBtn.stop().animate({
+          'bottom': '20px'
+        }, 400);
       }
     } else {
       if (showFlag) {
         showFlag = false;
-        topBtn.stop().animate({'bottom': '-100px'}, 200);
+        topBtn.stop().animate({
+          'bottom': '-100px'
+        }, 400);
       }
     }
   });
-
 
   $('.to-top').click(function () {
     $('body,html').animate({
@@ -139,36 +139,7 @@ $(function () {
     tTrigger.removeClass(activeClass);
     $("[rel^='" + accordion_activeTab + "']").addClass(activeClass);
   });
-
-
-  // @ tel link
-  // ------------------------------------------------------------
-
-  /*doc
-   ---
-   title: スマホのみ電話リンク
-   name: js-tel-link
-   category: js
-   ---
-
-
-   ```html_example
-
-   <span class="js-tel-link">00-0000-0000</span>
-
-   ```
-
-   */
-
-
-  var jsTelLinkTarget = $('.js-tel-link');
-  var ua = navigator.userAgent;
-  if(ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0){
-    jsTelLinkTarget.each(function(){
-      var str = $(this).text();
-      $(this).html($('<a>').attr('href', 'tel:' + str.replace(/-/g, '')).append(str + '</a>'));
-    });
-  }
+  
 
   // @ hiraku.js
   // ------------------------------------------------------------
