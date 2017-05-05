@@ -177,7 +177,7 @@ $(function () {
 
   setTimeout(function(){
     $loadIcon.addClass('icon-level-warning');
-  },1500);
+  },3000);
   setTimeout(function(){
     $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
   },10000);
@@ -191,7 +191,7 @@ $(function () {
   $(window).load(function () {
     setTimeout(function(){
       $step01.fadeOut(800);
-    },3000);
+    },500);
     setTimeout(function () {
       $step02.fadeIn(800);
     },1300);

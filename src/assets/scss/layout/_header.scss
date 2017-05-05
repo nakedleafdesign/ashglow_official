@@ -11,7 +11,6 @@ $img_path: "../../assets/img/";
   z-index: 99999;
   @include max-media($screen-sm){
   box-shadow: 2px 0px 5px rgba(0,0,0,.4);
-    
     opacity:.95;
   }
   &__inner{
@@ -45,7 +44,8 @@ $img_path: "../../assets/img/";
   @include max-media($screen-sm){
     position: relative;
     top: 1px;
-    @include bgimgx2('common/h-logo-black.png');
+    //@include bgimgx2('common/h-logo-black.png');
+    background-image: url(../../assets/img/common/h-logo-black.png);
     background-size:contain;
     width: 74px;
     height:$header-hight;

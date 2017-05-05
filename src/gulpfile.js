@@ -44,7 +44,7 @@ gulp.task('scss', function(){
               functions: assetFunctions({
                 // todo 治す
                 images_path:'./' + assetsDir + 'img',
-                http_images_path: "/assets/img"
+                http_images_path: "./assets/img"
               })
             }
         ))
