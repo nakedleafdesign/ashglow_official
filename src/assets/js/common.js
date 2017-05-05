@@ -172,6 +172,8 @@ $(function () {
   var $loadLayer = $('.js-loading-layer__layer');
   var $loadContent = $('.js-loading-layer__content');
   var $loadIcon = $('.js-loading-layer__icon');
+  var $step01 = $('.js-loading-layer__step01');
+  var $step02 = $('.js-loading-layer__step02');
 
   setTimeout(function(){
     $loadIcon.addClass('icon-level-warning');
@@ -180,9 +182,34 @@ $(function () {
     $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
   },10000);
 
+  var winH = $(window).height();
+
+  $loadContent.css('opacity','0');
+  $step02.css('display','none');
+  $loadLayer.height(winH).css('display','block');
+
   $(window).load(function () {
-    $loadLayer.delay(900).fadeOut(800);
-    $loadContent.css('display', 'block');
+    setTimeout(function(){
+      $step01.fadeOut(800);
+    },500);
+    setTimeout(function () {
+      $step02.fadeIn(800);
+    },1300);
+    setTimeout(function () {
+      $loadLayer.stop().animate({
+        width:'0',
+        opacity:0
+      }, {
+        duration: 'slow',
+        easing: 'swing',
+        complete: function () {
+          $(this).remove();
+        }
+      })
+    },3100);
+
+
+    $loadContent.css('opacity', '1');
   });
 
 
