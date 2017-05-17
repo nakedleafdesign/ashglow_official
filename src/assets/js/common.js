@@ -6,20 +6,20 @@ var activeClass = 'is-active';
 
 $(function () {
 
-
   // @ ヘッダー非表示 js-header-hidden
   // ------------------------------------------------------------
 
   var $header = $('.js-header-hidden__header');
   var $mainContent = $('.js-header-hidden__content');
   var mainContentPos = $mainContent.offset().top;
+  var mainContentPosH = mainContentPos - $header.height()/2;
   var winW = $(window).width();
 
 
   $(window).scroll(function () {
     if (winW > spW) {
       var winScrollTop = $(window).scrollTop();
-      if (mainContentPos < winScrollTop) {
+      if (mainContentPosH < winScrollTop) {
         $header.addClass('is-hidden');
       } else {
         $header.removeClass('is-hidden');

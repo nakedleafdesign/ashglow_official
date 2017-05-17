@@ -46,10 +46,10 @@ $img_path: "../../assets/img/";
   display: flex;
   -js-display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   .grid:first-child{
-    width: 50%;
-    padding:10px 60px 10px 40px;
+    width: 43%;
+    padding:10px 40px 10px 40px;
     border-right:1px solid #eee;
     @include max-media($screen-sm){
       width: 100%;
@@ -57,14 +57,16 @@ $img_path: "../../assets/img/";
       border-right: 0;
       border-bottom:1px solid #eee;
     }
+    line-height: 2;
   }
   .grid:last-child{
-    width: 50%;
-    padding:10px 40px 10px 60px;
+    width: 43%;
+    padding:10px 40px 10px 45px;
     @include max-media($screen-sm){
       width: 100%;
       padding: 30px 0 0;
     }
+    line-height: 1.7;
   }
 }
 

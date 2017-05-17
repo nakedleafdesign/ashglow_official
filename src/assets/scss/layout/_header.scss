@@ -2,7 +2,7 @@
 // @ header
 // ============================================================ */
 
-$img_path: "../../assets/img/";
+$img_path: "./../../assets/img/";
 
 .header{
   position: fixed;
@@ -38,8 +38,9 @@ $img_path: "../../assets/img/";
   align-items:center;
 }
 .h-logo{
-  background: center center no-repeat;
-  @include bgimgx2('common/h-logo.png');
+  background:url("#{$img-path}common/h-logo.png") center center no-repeat;
+  width: 140px;
+  height: 57px;
   background-size:contain;
   @include max-media($screen-sm){
     position: relative;

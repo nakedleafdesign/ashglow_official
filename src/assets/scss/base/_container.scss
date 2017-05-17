@@ -37,6 +37,7 @@
   padding: 0 130px;
   width: 100%;
   min-width: 1200px;
+  max-width:1200px;
   @include max-media($screen-sm){
     padding:0 4%;
     min-width:100%;
