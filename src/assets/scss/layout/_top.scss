@@ -56,8 +56,10 @@ $img_path: "../../assets/img/";
       padding: 0 0 30px;
       border-right: 0;
       border-bottom:1px solid #eee;
+      text-align: center;
     }
     line-height: 2;
+    
   }
   .grid:last-child{
     width: 43%;
@@ -65,6 +67,7 @@ $img_path: "../../assets/img/";
     @include max-media($screen-sm){
       width: 100%;
       padding: 30px 0 0;
+      text-align: center;
     }
     line-height: 1.7;
   }
