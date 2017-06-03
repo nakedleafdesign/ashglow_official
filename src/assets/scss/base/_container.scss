@@ -21,7 +21,8 @@
   position: relative;
   z-index: 1;
   @include max-media($screen-sm){
-    margin-top:45.8333333%;
+    //margin-top:45.8333333%;
+    margin-top: 162%;
     position: relative;
     top:$header-hight;
   }

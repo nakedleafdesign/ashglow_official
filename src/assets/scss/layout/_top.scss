@@ -53,23 +53,35 @@ $img_path: "../../assets/img/";
     border-right:1px solid #eee;
     @include max-media($screen-sm){
       width: 100%;
-      padding: 0 0 30px;
+      padding: 0 0 50px;
       border-right: 0;
       border-bottom:1px solid #eee;
       text-align: center;
     }
-    line-height: 2;
-    
   }
   .grid:last-child{
     width: 43%;
     padding:10px 40px 10px 45px;
     @include max-media($screen-sm){
       width: 100%;
-      padding: 30px 0 0;
+      padding: 50px 0 0;
       text-align: center;
     }
     line-height: 1.7;
+  }
+}
+.sec-brand-text-unit{
+  p{
+    font-size: 1.066666667em;
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+  }
+  @include max-media($screen-sm){
+    p{
+      font-size: 1.076923077em;
+      line-height: 1.7;
+      margin-bottom: 1.8em;
+    }
   }
 }
 
