@@ -32,6 +32,41 @@ $img_path: "../../assets/img/";
 // @ key visual
 // ============================================================ //
 
+.key-visual{
+  width: 100%;
+  min-width: 1200px;
+  height: 150px;
+  background: url(#{$img_path}top/section_media_bg.jpg) center center no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  @include max-media($screen-sm) {
+    min-width: 100%;
+    overflow-x: hidden;
+  }
+  &__inner{
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 130px;
+    width: 100%;
+    min-width: 1200px;
+    max-width:1200px;
+    @include max-media($screen-sm){
+      padding:0 4%;
+      min-width:100%;
+    }
+  }
+}
+
+.kye-visual__title{
+  position: absolute;
+  top:50%;
+  left: 130px;
+  transform: translate(0%, -50%);
+  @include fzem(24,15);
+}
+
+
 // ============================================================ //
 // @ breadcrumb
 // ============================================================ //

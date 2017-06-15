@@ -3,7 +3,7 @@
 // ============================================================ */
 
 .gnav{
-  margin-top:-5px;
+  //margin-top:-5px;
   @include max-media($screen-sm){
     z-index: 9999;
     position: fixed;
