@@ -1,6 +1,37 @@
+//
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  > .btn {
+    position: relative;
+    float: left;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: -1px;
+  }
+}
+
 .btn-group{
-  text-align: center;
-  
   .btn{
     margin: 1em .5em;
   }
@@ -17,6 +48,7 @@
   user-select: none;
   -webkit-font-smoothing: antialiased;
   background: none;
+  text-decoration: none;
 }
 .btn::-webkit-search-decoration,
 .btn::-webkit-search-decoration {
@@ -30,12 +62,72 @@
 // @ btn 01
 // ------------------------------------------------------------
 
-.btn01{
-  display: inline-block;
-  position: relative;
-  background: #ccc;
+@mixin btn01($color:#666){
+  background:$color; //change
+  color:#fff;
+  border:none;
+  position:relative;
+  
+  font-size:1em;
+  padding:.9em 2em;
   line-height: 1;
-  padding:.5em .5em;
-  font-size: 1em;
-  border-radius: .2em;
+  transition:500ms ease all;
+  outline:none;
+  border-radius: 3px;
+  &:hover{
+    background:transparent;
+    color:$color; //change
+    &:before,
+    &:after{
+      width:100%;
+      transition:500ms ease all;
+    }
+  }
+  &:before,
+  &:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: $color; //change
+    transition:300ms ease all;}
+  &:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+}
+
+.btn01{
+  @include btn01;
+  &--primary{
+    @include btn01($brand-primary);
+  }
+  &--success{
+    @include btn01($brand-success);
+  }
+  &--warning{
+    @include btn01($brand-warning);
+  }
+  &--danger{
+    @include btn01($brand-danger);
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+.btn-xs {
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
 }

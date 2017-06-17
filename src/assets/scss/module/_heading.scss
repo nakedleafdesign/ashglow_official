@@ -106,8 +106,8 @@ category: heading
     content: '';
     width: 1em;
     height: 1px;
-    background: $text-color;
-    opacity:.5;
+    background: #ccc;
+    //opacity:.5;
   }
   @include max-media($screen-sm){
     font-size: 20px;
