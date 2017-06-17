@@ -1,0 +1,41 @@
+.btn-group{
+  text-align: center;
+  
+  .btn{
+    margin: 1em .5em;
+  }
+}
+
+.btn{
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance:none;
+  appearance: none;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  background: none;
+}
+.btn::-webkit-search-decoration,
+.btn::-webkit-search-decoration {
+  display: none;
+}
+.btn::focus,
+.btn::focus {
+  outline-offset: -2px;
+}
+
+// @ btn 01
+// ------------------------------------------------------------
+
+.btn01{
+  display: inline-block;
+  position: relative;
+  background: #ccc;
+  line-height: 1;
+  padding:.5em .5em;
+  font-size: 1em;
+  border-radius: .2em;
+}
