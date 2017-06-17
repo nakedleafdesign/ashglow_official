@@ -158,9 +158,12 @@ gulp.task('copy', function() {
     gulp.src(srcDir + assetsDir + 'fonts/**/*')
         .pipe(gulp.dest(distDir + assetsDir + 'fonts'))
         .pipe(browserSync.stream());
-  gulp.src(srcDir + assetsDir + 'js/lib/**/*')
-      .pipe(gulp.dest(distDir + assetsDir + 'js/lib/'))
+    gulp.src('bower_components/font-awesome/fonts/**/*')
+      .pipe(gulp.dest(distDir + assetsDir + 'fonts'))
       .pipe(browserSync.stream());
+    gulp.src(srcDir + assetsDir + 'js/lib/**/*')
+        .pipe(gulp.dest(distDir + assetsDir + 'js/lib/'))
+        .pipe(browserSync.stream());
 });
 
 // ------------------------------------------------------------

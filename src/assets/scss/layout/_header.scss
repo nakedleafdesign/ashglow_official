@@ -9,6 +9,7 @@ $img_path: "./../../assets/img/";
   top: 0;
   left: 0;
   z-index: 99999;
+  overflow-x:visible;
   @include max-media($screen-md){
     box-shadow: 2px 0px 5px rgba(0,0,0,.4);
     opacity:.95;

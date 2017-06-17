@@ -90,19 +90,6 @@ $(function () {
   
 
 
-  /* @ accorion
-  // ------------------------------------------------------------ */
-
-  var accordionCotainer = '.js-accordion';
-  var accordionTrigger = '.js-accordion-trigger';
-  var accordionContent = '.js-accordion-content';
-
-  $(accordionContent).hide();
-  $(accordionTrigger).on('click touch',function () {
-    $(this).toggleClass(activeClass);
-    $(this).closest(accordionCotainer).find(accordionContent).slideToggle();
-  });
-
   // @
   // ------------------------------------------------------------
 
@@ -156,6 +143,7 @@ $(function () {
   var $jsHeaderToggle = $('.js-header-toggle');
   var $jsHeaderToggleTarget = $('.js-header-toggle-target');
   var $jsHeaderToggleTime = 300;
+  var $contentContainer = $('.content-container');
 
   var w = $(window).width();
   var x = 769;
@@ -167,23 +155,33 @@ $(function () {
     if ($(this).hasClass(activeClass)){
       $(this).removeClass(activeClass);
       $jsHeaderToggleTarget.fadeOut($jsHeaderToggleTime);
+      var current_scrollY = $( window ).scrollTop();
+
+      $contentContainer.attr( { style: '' } );
+      $( 'html, body' ).prop( { scrollTop: current_scrollY } );
+
     } else {
       $(this).addClass(activeClass);
       $jsHeaderToggleTarget.addClass(activeClass).fadeIn($jsHeaderToggleTime);
+      var current_scrollY = $( window ).scrollTop();
+      $contentContainer.css( {
+        position: 'fixed',
+        width: '100%',
+        top: -1 * current_scrollY
+      } );
     }
   });
   $(window).resize(function(){
-    // var w = $(window).width();
-    // var x = 415;
-    // if (x <= w) {
-    //   $jsHeaderToggle.removeClass(activeClass);
-    //   $jsHeaderToggleTarget.removeClass(activeClass);
-    //
-    // }
+    var w = $(window).width();
+    var x = 769;
+    if (x <= w) {
+      $jsHeaderToggle.removeClass(activeClass);
+      $jsHeaderToggleTarget.removeClass(activeClass).css({
+        display:'block'
+      });
+    } else {
+      $jsHeaderToggle.removeClass(activeClass);
+      $jsHeaderToggleTarget.hide();
+    }
   });
-
-
-
-
-
 });

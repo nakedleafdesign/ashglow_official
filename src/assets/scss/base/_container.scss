@@ -7,9 +7,10 @@
   min-width: 1200px;
   @include max-media($screen-md){
     min-width: 100%;
-    overflow-x: hidden;
+    //overflow-x: hidden;
   }
 }
+
 
 /* @ メインコンテナー
 // ------------------------------ */
