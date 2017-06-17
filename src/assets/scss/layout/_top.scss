@@ -51,6 +51,10 @@ $img_path: "../../assets/img/";
     width: 43%;
     padding:10px 40px 10px 40px;
     border-right:1px solid #eee;
+    @include max-media($screen-md){
+       padding: 10px 30px 10px 0;
+      width: 47%;
+    }
     @include max-media($screen-sm){
       width: 100%;
       padding: 0 0 50px;
@@ -62,6 +66,10 @@ $img_path: "../../assets/img/";
   .grid:last-child{
     width: 43%;
     padding:10px 40px 10px 45px;
+    @include max-media($screen-md){
+      padding: 10px 0 10px 30px;
+      width: 47%;
+    }
     @include max-media($screen-sm){
       width: 100%;
       padding: 50px 0 0;

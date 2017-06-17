@@ -78,73 +78,6 @@ $(function () {
     return false;
   });
 
-  // @ tab-menu
-  // ------------------------------------------------------------
-
-  /*
-   tab menu
-
-   <div>
-   <a href="javascript:void(0)" class="btn-round" data-tab-content="trigger" rel="tab1">hoge</span></a>
-   <a href="javascript:void(0)" class="btn-round" data-tab-content="trigger" rel="tab2">fuga</span></a>
-   <a href="javascript:void(0)" class="btn-round" data-tab-content="trigger" rel="tab3">piyo</span></a>
-   </div>
-   <div>
-   <a href="" rel="tab1"></a>
-   <div id="tab1" data-tab-content="tab-content">
-   コンテンツ
-   </div>
-   <a href="" rel="tab2"></a>
-   <div id="tab2" class="events-container" data-tab-content="tab-content">
-   コンテンツ
-   </div>
-   </div>
-
-   */
-
-  // RefillsのVERTICAL TABSを参考
-
-  var tContent = $('.js-tab-menu-content'); //.js-vertical-tab-contentを置き換え
-  var tTrigger = $('.js-tab-menu-trigger'); //.js-vertical-tabを置き換え
-  var tHeading = '[data-tab-content="heading"]'; //.js-vertical-tab-accordion-headingを置き換え
-
-  tContent.hide();
-  tContent.first().show();
-  tTrigger.first().addClass('is-active');
-
-  /* if in tab mode */
-
-  tTrigger.click(function (event) {
-    event.preventDefault();
-
-    tContent.hide();
-    var activeTab = $(this).attr("rel");
-    $("#" + activeTab).show();
-
-    tTrigger.removeClass(activeClass);
-    $(this).addClass(activeClass);
-
-    $(tHeading).removeClass(activeClass);
-    $("[rel^='" + activeTab + "']").addClass(activeClass);
-  });
-
-  /* if in accordion mode */
-
-  $(tHeading).click(function (event) {
-    event.preventDefault();
-
-    $(theading).hide();
-    var accordion_activeTab = $(this).attr("rel");
-    $("#" + accordion_activeTab).show();
-
-    $(theading).removeClass(activeClass);
-    $(this).addClass(activeClass);
-
-    tTrigger.removeClass(activeClass);
-    $("[rel^='" + accordion_activeTab + "']").addClass(activeClass);
-  });
-
-
   // @ hiraku.js
   // ------------------------------------------------------------
 
@@ -173,48 +106,48 @@ $(function () {
   // @
   // ------------------------------------------------------------
 
-  var $loadLayer = $('.js-loading-layer__layer');
-  var $loadContent = $('.js-loading-layer__content');
-  var $loadIcon = $('.js-loading-layer__icon');
-  var $step01 = $('.js-loading-layer__step01');
-  var $step02 = $('.js-loading-layer__step02');
-
-  setTimeout(function(){
-    $loadIcon.addClass('icon-level-warning');
-  },3000);
-  setTimeout(function(){
-    $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
-  },10000);
-
-  var winH = $(window).height();
-
-  $loadContent.css('opacity','0');
-  $step02.css('display','none');
-  $loadLayer.height(winH).css('display','block');
-
-  $(window).load(function () {
-    setTimeout(function(){
-      $step01.fadeOut(800);
-    },500);
-    setTimeout(function () {
-      $step02.fadeIn(800);
-    },1300);
-    setTimeout(function () {
-      $loadLayer.stop().animate({
-        width:'0',
-        opacity:0
-      }, {
-        duration: 'slow',
-        easing: 'swing',
-        complete: function () {
-          $(this).remove();
-        }
-      })
-    },3100);
-
-
-    $loadContent.css('opacity', '1');
-  });
+  // var $loadLayer = $('.js-loading-layer__layer');
+  // var $loadContent = $('.js-loading-layer__content');
+  // var $loadIcon = $('.js-loading-layer__icon');
+  // var $step01 = $('.js-loading-layer__step01');
+  // var $step02 = $('.js-loading-layer__step02');
+  //
+  // setTimeout(function(){
+  //   $loadIcon.addClass('icon-level-warning');
+  // },3000);
+  // setTimeout(function(){
+  //   $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
+  // },10000);
+  //
+  // var winH = $(window).height();
+  //
+  // $loadContent.css('opacity','0');
+  // $step02.css('display','none');
+  // $loadLayer.height(winH).css('display','block');
+  //
+  // $(window).load(function () {
+  //   setTimeout(function(){
+  //     $step01.fadeOut(800);
+  //   },500);
+  //   setTimeout(function () {
+  //     $step02.fadeIn(800);
+  //   },1300);
+  //   setTimeout(function () {
+  //     $loadLayer.stop().animate({
+  //       width:'0',
+  //       opacity:0
+  //     }, {
+  //       duration: 'slow',
+  //       easing: 'swing',
+  //       complete: function () {
+  //         $(this).remove();
+  //       }
+  //     })
+  //   },3100);
+  //
+  //
+  //   $loadContent.css('opacity', '1');
+  // });
 
 
   // @ header
@@ -225,7 +158,7 @@ $(function () {
   var $jsHeaderToggleTime = 300;
 
   var w = $(window).width();
-  var x = 415;
+  var x = 769;
   if (x >= w) {
     $jsHeaderToggleTarget.hide();
   }

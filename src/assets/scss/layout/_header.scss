@@ -9,17 +9,28 @@ $img_path: "./../../assets/img/";
   top: 0;
   left: 0;
   z-index: 99999;
-  @include max-media($screen-sm){
-  box-shadow: 2px 0px 5px rgba(0,0,0,.4);
+  @include max-media($screen-md){
+    box-shadow: 2px 0px 5px rgba(0,0,0,.4);
     opacity:.95;
   }
   &__inner{
+    margin: 0 auto;
+    padding:15px 130px 20px;
+    width: 100%;
+    min-width: 1200px;
+    max-width:1200px;
+    @include max-media($screen-md){
+      padding:0 4%;
+      min-width:100%;
+    }
+  }
+  &__inner--top{
     padding:15px 30px 20px;
-    @include max-media($screen-sm){
+    @include max-media($screen-md){
       padding: 0 4%;
     }
   }
-  @include max-media($screen-sm){
+  @include max-media($screen-md){
     z-index: 99999;
     height: $header-hight;
     background: #fff;
@@ -39,7 +50,7 @@ $img_path: "./../../assets/img/";
   width: 110px;
   height: 45px;
   background-size:contain;
-  @include max-media($screen-sm){
+  @include max-media($screen-md){
     position: relative;
     top: 1px;
     //@include bgimgx2('common/h-logo-black.png');
@@ -80,7 +91,7 @@ $toggle-space:7px;
   span.bottom{
     transform: translateY($toggle-space);
   }
-  @include max-media($screen-sm){
+  @include max-media($screen-md){
     display: block;
   }
 }

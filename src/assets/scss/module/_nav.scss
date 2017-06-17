@@ -4,7 +4,7 @@
 
 .gnav{
   //margin-top:-5px;
-  @include max-media($screen-sm){
+  @include max-media($screen-md){
     z-index: 9999;
     position: fixed;
     display: none;
@@ -21,14 +21,14 @@
   -js-display: flex;
   flex-flow: row wrap;
   list-style: none;
-  @include max-media($screen-sm){
+  @include max-media($screen-md){
     flex-flow: column wrap;
     padding: 5%;
     margin: 5px 0 0 0;
   }
 }
 .gnav-item{
-  @include max-media($screen-sm){
+  @include max-media($screen-md){
     display: flex;
     -js-display: flex;
     flex-flow: row wrap;
@@ -40,7 +40,7 @@
     text-decoration: none;
     padding:0 .75em;
     line-height: 1;
-    @include max-media($screen-sm){
+    @include max-media($screen-md){
       font-size:1.153846154em;
       line-height:2em;
     }
