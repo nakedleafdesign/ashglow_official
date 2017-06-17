@@ -155,20 +155,12 @@ $(function () {
     if ($(this).hasClass(activeClass)){
       $(this).removeClass(activeClass);
       $jsHeaderToggleTarget.fadeOut($jsHeaderToggleTime);
-      var current_scrollY = $( window ).scrollTop();
 
-      $contentContainer.attr( { style: '' } );
-      $( 'html, body' ).prop( { scrollTop: current_scrollY } );
 
     } else {
       $(this).addClass(activeClass);
       $jsHeaderToggleTarget.addClass(activeClass).fadeIn($jsHeaderToggleTime);
-      var current_scrollY = $( window ).scrollTop();
-      $contentContainer.css( {
-        position: 'fixed',
-        width: '100%',
-        top: -1 * current_scrollY
-      } );
+      
     }
   });
   $(window).resize(function(){
