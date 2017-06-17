@@ -45,82 +45,11 @@ category: text
   }
 }
 
-
-/*--------------------------------------------------------------//
-// @ heading
-// ------------------------------------------------------------ */
-
-
-
-/*doc
----
-title: 見出し1
-name: heading01
-category: heading
----
-
-```html_example
-
-<div class="heading01-unit">
-  <h2 class="heading01"><span class="heading01__inner">質屋リサイクルマートが選ばれるワケ</span></h2>
-  <p class="heading01__lead">ご自宅のご不用品をまとめて買取します！</p>
-</div>
-
-```
-
-*/
-.heading01-unit{
-  display: table;
-  margin:0 auto;
-  margin-bottom: 30px;
-}
-.heading01{
-  text-align: center;
-  font-family:$font-family-ryumin;
-  font-size: 28px;
-  line-height: 1.2;
-  @include max-media($screen-sm){
-    font-size: 20px;
-  }
-  &__head{
-    font-family:$font-family-ryumin;
-    text-align: center;
-    line-height: 1;
-    margin-bottom:50px;
-    @include max-media($screen-sm){
-      margin-bottom: 30px;
-    }
-  }
-  &__lead{
-    margin-top: 8px;
-    text-align: center;
-    color: $gray-light;
-  }
+.entry > *:first-child{
+  margin-top: 0;
 }
 
-.heading01{
-  &--white{
-    @extend .heading01;
-    color: #fff;
-  }
-  &__head--white{
-    @extend .heading01__head;
-    color: #fff;
-  }
-  &__lead--white{
-    @extend .heading01__lead;
-    color: #fff;
-  }
-}
-.heading03{
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 20px;
-  font-family:$font-family-ryumin;
-  @include max-media($screen-sm){
-    font-size: 16px;
-  }
-}
+
 
 /*--------------------------------------------------------------//
 // @ paragraph

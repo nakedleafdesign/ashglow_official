@@ -160,7 +160,7 @@ $(function () {
     } else {
       $(this).addClass(activeClass);
       $jsHeaderToggleTarget.addClass(activeClass).fadeIn($jsHeaderToggleTime);
-      
+
     }
   });
   $(window).resize(function(){
