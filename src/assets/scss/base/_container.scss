@@ -134,7 +134,7 @@
   
 }
 .block-primary{
-  @include perwidth(940,670);
+  @include perwidth(940,650);
   @include max-media($screen-md){
     width: 100%;
     margin-bottom: 30px;

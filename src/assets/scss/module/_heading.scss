@@ -92,11 +92,11 @@ category: heading
 
 .heading02{
   position: relative;
+  margin:2.5em 0 1.5em;
+  padding-left: 1.25em;
+  line-height: 1.2;
   font-family:$font-family-ryumin;
   font-size: 20px;
-  line-height: 1.2;
-  margin:2.5em 0 1.5em;
-  padding-left: 1.5em;
   &:before{
     position: absolute;
     top:50%;
@@ -104,7 +104,7 @@ category: heading
     transform: translate(0, -50%);
     display: inline-block;
     content: '';
-    width: 1em;
+    width: .75em;
     height: 1px;
     background: #ccc;
     //opacity:.5;

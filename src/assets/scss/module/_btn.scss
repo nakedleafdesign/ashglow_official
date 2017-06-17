@@ -32,8 +32,27 @@
 }
 
 .btn-group{
+  margin-left: -10px;
+  margin-right: -10px;
+  width: 100%;
+  @include clearfix;
+  &--center{
+    display: flex;
+    -js-display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items:flex-start;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: 100%;
+    
+    @include clearfix;
+    .btn{
+      margin: 1em 10px;
+    }
+  }
   .btn{
-    margin: 1em .5em;
+    margin: 1em 10px;
   }
 }
 
