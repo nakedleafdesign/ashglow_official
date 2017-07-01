@@ -112,15 +112,13 @@ $(function () {
   $step02.css('display','none');
   $loadLayer.height(winH).css('display','block');
 
-  $(window).load(function () {
+  $(window).on('load', function () {
     setTimeout(function(){
-      $step01.fadeOut(800);
-    },500);
-    console.log("1");
+      $step01.fadeOut(600);
+    },0);
     setTimeout(function () {
-      $step02.fadeIn(800);
-    },1300);
-    console.log("2");
+      $step02.addClass(activeClass).fadeIn(800);
+    },800);
     setTimeout(function () {
       $loadLayer.stop().animate({
         width:'0',
@@ -132,9 +130,7 @@ $(function () {
           $(this).remove();
         }
       })
-    },3100);
-
-
+    },1700);
     $loadContent.css('opacity', '1');
   });
 

@@ -11,10 +11,13 @@
     height: 100vh;
     top: 0;
     background: #fff;
-    opacity:0;
     left: 0;
   }
+  &.is-active{
+  
+  }
 }
+
 .gnav-body{
   display: flex;
   -js-display: flex;

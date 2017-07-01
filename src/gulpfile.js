@@ -129,7 +129,7 @@ gulp.task('js',function(){
 
     // jquery
     gulp.src(config.path.source + config.path.node + 'jquery/dist/jquery.js')
-        .pipe($.uglify())
+        // .pipe($.uglify())
         .pipe(gulp.dest(distDir));
 
     // form.js

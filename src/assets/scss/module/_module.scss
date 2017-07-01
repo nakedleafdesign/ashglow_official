@@ -81,7 +81,11 @@ $to-top-color : #444;
 }
 
 .loader-layer__logo{
+  display: none;
   width: 140px;
   vertical-align: bottom;
+  .is-active &{
+    display: block;
+  }
 }
 
