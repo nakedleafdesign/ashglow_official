@@ -51,7 +51,7 @@ $img_path: "../../assets/img/";
     overflow-x: hidden;
   }
   @include max-media($screen-sm){
-    height: 100px;
+    height: 140px;
   }
   &__inner{
     position: relative;

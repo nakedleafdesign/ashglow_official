@@ -3,7 +3,6 @@
 // ============================================================ */
 
 .gnav{
-  //margin-top:-5px;
   @include max-media($screen-md){
     z-index: 9999;
     position: fixed;
@@ -11,9 +10,9 @@
     width: 100%;
     height: 100vh;
     top: 0;
-    left: 0;
     background: #fff;
-    
+    opacity:0;
+    left: 0;
   }
 }
 .gnav-body{
@@ -22,7 +21,6 @@
   flex-flow: row wrap;
   list-style: none;
   @include max-media($screen-md){
-    
     flex-flow: column wrap;
     padding: 3%;
     margin: 5px 0 0 0;

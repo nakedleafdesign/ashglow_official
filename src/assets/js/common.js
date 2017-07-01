@@ -93,50 +93,50 @@ $(function () {
   // @
   // ------------------------------------------------------------
 
-  // var $loadLayer = $('.js-loading-layer__layer');
-  // var $loadContent = $('.js-loading-layer__content');
-  // var $loadIcon = $('.js-loading-layer__icon');
-  // var $step01 = $('.js-loading-layer__step01');
-  // var $step02 = $('.js-loading-layer__step02');
-  //
-  // setTimeout(function(){
-  //   $loadIcon.addClass('icon-level-warning');
-  // },3000);
-  // setTimeout(function(){
-  //   $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
-  // },10000);
-  //
-  // var winH = $(window).height();
-  //
-  // $loadContent.css('opacity','0');
-  // $step02.css('display','none');
-  // $loadLayer.height(winH).css('display','block');
-  //
-  // $(window).load(function () {
-  //   setTimeout(function(){
-  //     $step01.fadeOut(800);
-  //   },500);
-  //   console.log("1");
-  //   setTimeout(function () {
-  //     $step02.fadeIn(800);
-  //   },1300);
-  //   console.log("2");
-  //   setTimeout(function () {
-  //     $loadLayer.stop().animate({
-  //       width:'0',
-  //       opacity:0
-  //     }, {
-  //       duration: 'slow',
-  //       easing: 'swing',
-  //       complete: function () {
-  //         $(this).remove();
-  //       }
-  //     })
-  //   },3100);
-  //
-  //
-  //   $loadContent.css('opacity', '1');
-  // });
+  var $loadLayer = $('.js-loading-layer__layer');
+  var $loadContent = $('.js-loading-layer__content');
+  var $loadIcon = $('.js-loading-layer__icon');
+  var $step01 = $('.js-loading-layer__step01');
+  var $step02 = $('.js-loading-layer__step02');
+
+  setTimeout(function(){
+    $loadIcon.addClass('icon-level-warning');
+  },3000);
+  setTimeout(function(){
+    $loadIcon.removeClass('icon-level-warning').addClass('icon-level-danger');
+  },10000);
+
+  var winH = $(window).height();
+
+  $loadContent.css('opacity','0');
+  $step02.css('display','none');
+  $loadLayer.height(winH).css('display','block');
+
+  $(window).load(function () {
+    setTimeout(function(){
+      $step01.fadeOut(800);
+    },500);
+    console.log("1");
+    setTimeout(function () {
+      $step02.fadeIn(800);
+    },1300);
+    console.log("2");
+    setTimeout(function () {
+      $loadLayer.stop().animate({
+        width:'0',
+        opacity:0
+      }, {
+        duration: 'slow',
+        easing: 'swing',
+        complete: function () {
+          $(this).remove();
+        }
+      })
+    },3100);
+
+
+    $loadContent.css('opacity', '1');
+  });
 
 
   // @ header
@@ -157,8 +157,6 @@ $(function () {
     if ($(this).hasClass(activeClass)){
       $(this).removeClass(activeClass);
       $jsHeaderToggleTarget.fadeOut($jsHeaderToggleTime);
-
-
     } else {
       $(this).addClass(activeClass);
       $jsHeaderToggleTarget.addClass(activeClass).fadeIn($jsHeaderToggleTime);
