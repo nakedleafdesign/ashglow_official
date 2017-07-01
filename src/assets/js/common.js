@@ -116,9 +116,11 @@ $(function () {
   //   setTimeout(function(){
   //     $step01.fadeOut(800);
   //   },500);
+  //   console.log("1");
   //   setTimeout(function () {
   //     $step02.fadeIn(800);
   //   },1300);
+  //   console.log("2");
   //   setTimeout(function () {
   //     $loadLayer.stop().animate({
   //       width:'0',
