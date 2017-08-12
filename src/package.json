@@ -20,6 +20,7 @@
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.0",
     "gulp-ejs": "^3.0.1",
     "gulp-hologram": "^1.2.0",
     "gulp-imagemin": "^3.3.0",

@@ -77,7 +77,7 @@ gulp.task('scss', function(){
             require('css-mqpacker')
         ]))
         // ▼ 出力CSSを難読化させる場合はコメントアウトを外す
-        // .pipe($.csso())
+        .pipe($.csso())
         .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest(distDir))
 

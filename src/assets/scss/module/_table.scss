@@ -60,6 +60,13 @@ category: table
 .table01{
   @extend %table-base;
   width: 100%;
+  min-width:100%;
+  tbody{
+    width: 100%;
+  }
+  tr{
+    width: 100%;
+  }
   tr,th,td{
     @include max-media($screen-sm){
       display: block;
@@ -71,13 +78,11 @@ category: table
   }
   th{
     position: relative;
-    max-width: 35%;
+    min-width: 100px;
     text-align: left;
     border-color:#888;
     @include max-media($screen-sm){
       max-width:100%;
-      //border-color:#ccc;
-      //border-bottom:1px dotted #ccc;
       background: #eee;
       border: none;
     }
