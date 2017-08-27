@@ -12,7 +12,7 @@ category: table
 
 ```html_example
 
-<div class="table01">
+  <div class="table01">
   <table>
     <tr>
       <th>タイトル</th>
@@ -33,12 +33,12 @@ category: table
 
 */
 
+$table-bdc : #ccc;
+
 %table-base {
     width: 100%;
     table-layout: auto;
     margin:3em 0;
-  
-  
   th,td{
     padding: 1em .8em .9em;
     vertical-align: top;
@@ -88,7 +88,7 @@ category: table
     }
   }
   td{
-    border-color: #ccc;
+    border-color: $table-bdc;
     @include max-media($screen-sm){
       //border-color:#888;
       border: none;
@@ -107,7 +107,7 @@ category: table
 
 ```html_example
 
-<div class="table01 table--scroll">
+<div class="table01--scroll">
   <table>
     <tr>
       <th>ダミータイトル</th>
@@ -124,34 +124,46 @@ category: table
 
 */
 
-.table--scroll{
+.table01--scroll{
   
-  @include max-media($screen-sm){
-    
-    
-    td, th {
-      white-space: nowrap;
-      width: 100%;
-    }
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: auto;
-    position: relative;
+  @extend %table-base;
+  overflow-x: scroll;
+  white-space: nowrap;
+  
     &:before {
+      @include max-media($screen-sm){
       @include fa-icon();
       text-align: center;
       display: block;
       font-size: 12px;
       content: "#{$fa-var-arrows-h}　この表は左右に動かせます。";
-      //margin-bottom: 20px;
       padding-bottom: 5px;
+      }
     }
-  }
-  @include max-media($screen-sm){
-    &:after {
-      //    content: "#{$fa-var-arrows-h}　このテーブルは左右に動かす事が出来ます。";
+    
+    width: 100%;
+    min-width:100%;
+    tbody{
+      width: 100%;
     }
-  }
+    tr{
+      width: 100%;
+    }
+    
+    th,td{
+      border-bottom:1px solid;
+    }
+    th{
+      position: relative;
+      min-width: 100px;
+      text-align: left;
+      border-color:#888;
+    
+    }
+    td{
+      border-color: #ccc;
+    }
+
 }
 
 
@@ -206,6 +218,10 @@ category: table
     background: transparent;
     color:$text-color;
   }
+  td{
+    border-right:1px solid $table-bdc;
+  }
+  
   tr{
     @include max-media($screen-sm){
       margin-bottom: 1em;
@@ -219,5 +235,27 @@ category: table
     @include max-media($screen-sm){
       width: 100%;
     }
+  }
+}
+
+// @ オプション
+// ------------------------------------------------------------
+$zebra-even:#f9f9f9;
+$table-highlight:#666;
+
+.table--zebra{
+  tbody tr:nth-child(even){
+    background: $zebra-even;
+  }
+}
+
+.table-highlight{
+  tbody tr{
+    &:hover{
+      opacity: $hover-opacity;
+      background: $table-highlight;
+      color: #fff;
+    }
+    
   }
 }

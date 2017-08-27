@@ -16,6 +16,9 @@ if (typeof page === 'undefined') {
   <meta name="description" content="<%= page.title %> | 福岡県北九州市を拠点に活動をしているギターロックバンドAshglow（アッシュグロウ）2009年に結成、数回のメンバーチェンジを経て、現メンバー体制となる。2015年にレーベルLUZ ORACLEに所属、企業や団体のTVCMやテーマソング等に楽曲が使用される。
 楽曲は主にツインギター・ベース・ドラムというバンドの基本構成を軸に、楽曲により鍵盤やシンセサイザー・ストリング等の音色を取り入れ、多彩な音色を用いて表現している。">
   <meta name="keywords" content="Ashglow,藤浪哲也,福岡,バンド,インディーズ,ギターロック">
+  <% if(page.noindex === true){ %>
+  <meta name="robots" content="noindex">
+  <%} %>
 
   <!-- Facebook OpenGraph -->
   <meta property="fb:app_id" content="359942684185258">

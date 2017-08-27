@@ -1,0 +1,23 @@
+/* ============================================================ //
+// @ grid
+// ============================================================ */
+
+.grid-group{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  @include max-media($screen-sm){
+    align-items:flex-start;
+  }
+  .grid--col02{
+    width: 50%;
+    @include max-media($screen-sm){
+      width: 100%;
+    }
+    > *:first-child{
+      margin-top: 0;
+    }
+  }
+}
+

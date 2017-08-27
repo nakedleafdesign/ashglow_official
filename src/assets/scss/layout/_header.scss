@@ -11,7 +11,7 @@ $img_path: "./../../assets/img/";
   z-index: 99999;
   overflow-x:visible;
   @include max-media($screen-md){
-    box-shadow: 2px 0px 5px rgba(0,0,0,.4);
+    box-shadow: 2px 0 5px rgba(0,0,0,.4);
     opacity:.95;
   }
   &__inner{
@@ -109,7 +109,6 @@ $toggle-space:7px;
     transform: rotate(45deg) translateY(0px);
   }
 }
-
 
 .header-toggle{
   top: 2px;
