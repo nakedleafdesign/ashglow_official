@@ -3,7 +3,8 @@ if (typeof page === 'undefined') {
   var page = {
     prepro:'',
     sync:'',
-    trackPdf:''
+    trackPdf:'',
+    guitarPdf:''
   };
 }
 %>
@@ -16,7 +17,9 @@ if (typeof page === 'undefined') {
     <% }if(page.sync){ %>
     <a href="<%= page.sync %>" class="btn btn02--success btn-block" target="_blank">同期データ</a>
     <% }if(page.trackPdf){ %>
-    <a href="<%= page.trackPdf %>" class="btn btn02 btn-block" target="_blank">トラックシートPDF</a><% } %>
+    <a href="<%= page.trackPdf %>" class="btn btn02 btn-block" target="_blank">トラックシートPDF</a>
+    <% }if(page.trackPdf){ %>
+    <a href="<%= page.guitarPdf %>" class="btn btn02--warning btn-block" target="_blank">リードギターPDF</a><% } %>
     </div>
   </aside>
   <aside class="side-module side-list-group">
