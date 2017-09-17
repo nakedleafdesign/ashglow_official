@@ -29,25 +29,27 @@ var sassLintFlag = false;
 //config
 //========================================================================
 config = {
-  "name" : "devkit",
+  "name" : "ashglow",
   "path": {
     "sharedSource" : "../",
     "source": "./",
-    "dist": "../dist/",
-    "ejs": "ejs",
-    "sass": "/assets/scss",
-    "css": "/assets/css",
-    "img": "/assets/img",
-    "svg": "/assets/svg",
-    "html": "html",
-    "js": "/assets/js",
-    "file": "/assets/file",
-    "fonts": "/assets/fonts",
+    "dist": "../dist",
+    "ejs": "ejs/",
+    "sass": "assets/scss/",
+    "css": "assets/css/",
+    "img": "assets/img/",
+    "svg": "assets/svg/",
+    "html": "html/",
+    "js": "assets/js",
+    "file": "assets/file/",
+    "fonts": "assets/fonts/",
     "bower" : "../bower_components/",
-    "dummy" : "/assets/dummy",
+    "dummy" : "assets/dummy/",
     "node" : "node_modules/",
     // "docs": "/docs",
     // "dev": "/dev",
+    "cms_dir":"wordpress",
+    "cms_theme":"wp-content/themes/ashglow/"
   }
 };
 
@@ -55,6 +57,9 @@ config = {
 //========================================================================
 // scss コンパイルタスク
 //========================================================================
+
+// @ 静的
+// ------------------------------------------------------------
 
 var browsers = [
     '> 3%'
@@ -82,6 +87,34 @@ gulp.task('scss', function(){
         .pipe(gulp.dest(distDir))
 
 });
+
+// @ CMS用
+// ------------------------------------------------------------
+
+gulp.task('scss.cms', function(){
+
+  var distDir = config.path.dist + config.cms_dir + config.cms_theme + config.path.css;
+
+  gulp.src(config.path.source + config.path.sass + '/**/*.scss')
+      .pipe($.plumber({
+        errorHandler: $.notify.onError("Error: <%= error.message %>")
+      }))
+      .pipe($.sourcemaps.init())
+      .pipe($.sass())
+      .pipe($.postcss([
+        // require('doiuse')({browsers: browsers}),
+        // todo:ignoreする https://liginc.co.jp/206518
+        require('autoprefixer')({browsers: browsers}),
+        require('css-mqpacker')
+      ]))
+      // ▼ 出力CSSを難読化させる場合はコメントアウトを外す
+      .pipe($.csso())
+      .pipe($.sourcemaps.write('./'))
+      .pipe(gulp.dest(distDir))
+
+});
+
+
 
 // ------------------------------------------------------------
 // Hologram
