@@ -31,9 +31,8 @@ var sassLintFlag = false;
 config = {
   "name" : "ashglow",
   "path": {
-    "sharedSource" : "../",
     "source": "./",
-    "dist": "../dist",
+    "dist": "../dist/",
     "ejs": "ejs/",
     "sass": "assets/scss/",
     "css": "assets/css/",
@@ -48,7 +47,7 @@ config = {
     "node" : "node_modules/",
     // "docs": "/docs",
     // "dev": "/dev",
-    "cms_dir":"wordpress",
+    "cms_dir":"wordpress/",
     "cms_theme":"wp-content/themes/ashglow/"
   }
 };
@@ -58,43 +57,14 @@ config = {
 // scss コンパイルタスク
 //========================================================================
 
-// @ 静的
-// ------------------------------------------------------------
-
 var browsers = [
     '> 3%'
 ];
 
-gulp.task('scss', function(){
+// @ Sassコンパイルタスクを関数化
+// ------------------------------
 
-  var distDir = config.path.dist + config.path.css;
-
-    gulp.src(config.path.source + config.path.sass + '/**/*.scss')
-        .pipe($.plumber({
-            errorHandler: $.notify.onError("Error: <%= error.message %>")
-        }))
-        .pipe($.sourcemaps.init())
-        .pipe($.sass())
-        .pipe($.postcss([
-            // require('doiuse')({browsers: browsers}),
-            // todo:ignoreする https://liginc.co.jp/206518
-            require('autoprefixer')({browsers: browsers}),
-            require('css-mqpacker')
-        ]))
-        // ▼ 出力CSSを難読化させる場合はコメントアウトを外す
-        .pipe($.csso())
-        .pipe($.sourcemaps.write('./'))
-        .pipe(gulp.dest(distDir))
-
-});
-
-// @ CMS用
-// ------------------------------------------------------------
-
-gulp.task('scss.cms', function(){
-
-  var distDir = config.path.dist + config.cms_dir + config.cms_theme + config.path.css;
-
+function scssCompile(distDir) {
   gulp.src(config.path.source + config.path.sass + '/**/*.scss')
       .pipe($.plumber({
         errorHandler: $.notify.onError("Error: <%= error.message %>")
@@ -111,7 +81,20 @@ gulp.task('scss.cms', function(){
       .pipe($.csso())
       .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest(distDir))
+}
 
+// @ 静的用Sassコンパルタスク
+// ------------------------------
+
+gulp.task('scss', function(){
+  scssCompile(config.path.dist + config.path.css);
+});
+
+// @ CMS用Sassコンパルタスク
+// ------------------------------
+
+gulp.task('cms.scss', function(){
+  scssCompile(config.path.dist + config.path.cms_dir + config.path.cms_theme + config.path.css);
 });
 
 
