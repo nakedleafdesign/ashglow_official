@@ -1,6 +1,42 @@
-// ------------------------------------------------------------
-// require
-// ------------------------------------------------------------
+//========================================================================
+//config
+//========================================================================
+
+config = {
+  "name" : "ashglow",   //プロジェクト名
+  "path": {             //各ディレクトリのパス
+    "source": "./",
+    "dist": "../dist/",
+    "cms":"../cms/",
+    "ejs": "ejs/",
+    "sass": "assets/scss/",
+    "css": "assets/css/",
+    "img": "assets/img/",
+    "svg": "assets/svg/",
+    "html": "./",
+    "php":"php/",
+    "js": "assets/js",
+    "file": "assets/file/",
+    "fonts": "assets/fonts/",
+    "bower" : "../bower_components/",
+    "dummy" : "assets/dummy/",
+    "node" : "node_modules/",
+    "cms_dir":"wordpress/",
+    "cms_theme":"wp-content/themes/ashglow/"
+  },
+  "mode":{
+    static:false,         // 静的モード
+    cms:true,             // CMSモード
+    cmstype:"wordpress",  // 使用するCMSの種類
+    html:false,           // htmlを使用する場合
+    ejs:true              // ejsを使用する場合
+  }
+};
+
+//========================================================================
+// @ require
+//========================================================================
+
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*'],
@@ -10,47 +46,6 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var del = require("del");
 var assetFunctions = require('node-sass-asset-functions');
-
-// ------------------------------------------------------------
-// config
-// ------------------------------------------------------------
-
-// Directorys
-var srcDir = './';
-var distDir = '../dist/';
-var assetsDir = 'assets/';
-var htmlDir = 'html/';
-
-// flag
-
-var sassLintFlag = false;
-
-//========================================================================
-//config
-//========================================================================
-config = {
-  "name" : "ashglow",
-  "path": {
-    "source": "./",
-    "dist": "../dist/",
-    "ejs": "ejs/",
-    "sass": "assets/scss/",
-    "css": "assets/css/",
-    "img": "assets/img/",
-    "svg": "assets/svg/",
-    "html": "html/",
-    "js": "assets/js",
-    "file": "assets/file/",
-    "fonts": "assets/fonts/",
-    "bower" : "../bower_components/",
-    "dummy" : "assets/dummy/",
-    "node" : "node_modules/",
-    // "docs": "/docs",
-    // "dev": "/dev",
-    "cms_dir":"wordpress/",
-    "cms_theme":"wp-content/themes/ashglow/"
-  }
-};
 
 
 //========================================================================
@@ -94,14 +89,13 @@ gulp.task('scss', function(){
 // ------------------------------
 
 gulp.task('cms.scss', function(){
-  scssCompile(config.path.dist + config.path.cms_dir + config.path.cms_theme + config.path.css);
+  scssCompile(config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.css);
 });
 
 
-
-// ------------------------------------------------------------
-// Hologram
-// ------------------------------------------------------------
+//========================================================================
+// @ Hologram | スタイルガイドジェネレーター
+//========================================================================
 
 // 参照、出力先は ./hologram/config.yml にて設定
 
@@ -111,174 +105,238 @@ gulp.task('hologram', function() {
 });
 
 
-//--------------------------------[
-// var sass-lint = false;
-//
-// function sassLintFlag(flag){
-//     if (flag){
-//         sass-lint = true;
-//     } else {
-//         sass-lint = false;
-//     }
-// }
-//
-//
-// gulp.task('watch', function () {
-//     sassLintFlag(false);
-//
-// });
-//
-// gulp.task('watch-lint', function () {
-//     sassLintFlag(true);
-//     gulp.watch(srcDir + assetsDir + 'scss/**/*.scss', ['sass','hologram','bs-reload']);
-// });
-//
-
-
 //========================================================================
 // @ js結合・圧縮
 //========================================================================
 
+//@ 関数化
+//------------------------------------------------------------
+
+function jsCompile(distDir) {
+  // jquery
+  gulp.src(config.path.source + config.path.node + 'jquery/dist/jquery.js') //node_moduleからファイルを読み込み
+  // .pipe($.uglify()) //難読化の場合はコメントアウトを外す
+      .pipe(gulp.dest(distDir));
+
+  // form.js | フォームバリデーション関係Js
+  gulp.src([config.path.source + config.path.js + '/form/lib/*.js',config.path.source + config.path.js + '/form.js'])
+      .pipe($.concat('form.js'))
+      .pipe($.uglify())
+      .pipe(gulp.dest(distDir));
+
+  //vender | ブラウザ対応等のJs
+  gulp.src(config.path.source + config.path.node + 'flexibility/flexibility.js') //node_moduleからファイルを読み込み
+      .pipe($.concat('vender.js'))
+      .pipe($.uglify())
+      .pipe(gulp.dest(distDir));
+
+  //通常
+  gulp.src([config.path.source + config.path.js + '/!(_)*.js','!' + config.path.source + config.path.js + '/lib/*.js']) //パーシャルを除外
+      .pipe($.uglify())
+      .pipe(gulp.dest(distDir))
+
+}
+
+// @ 静的用
+// ------------------------------
+
 gulp.task('js',function(){
-
-  var distDir = config.path.dist + config.path.js;
-
-    // jquery
-    gulp.src(config.path.source + config.path.node + 'jquery/dist/jquery.js')
-        // .pipe($.uglify())
-        .pipe(gulp.dest(distDir));
-
-    // form.js
-    gulp.src([config.path.source + config.path.js + '/form/lib/*.js',config.path.source + config.path.js + '/form.js'])
-        .pipe($.concat('form.js'))
-        .pipe($.uglify())
-        .pipe(gulp.dest(distDir));
-
-    //vender
-    gulp.src(config.path.source + config.path.node + 'flexibility/flexibility.js')
-        .pipe($.concat('vender.js'))
-        .pipe($.uglify())
-        .pipe(gulp.dest(distDir));
-
-    //通常
-    gulp.src([config.path.source + config.path.js + '/!(_)*.js','!' + config.path.source + config.path.js + '/lib/*.js']) //パーシャルを除外
-        .pipe($.uglify())
-        .pipe(gulp.dest(distDir))
+  jsCompile(config.path.dist + config.path.js);
 });
-   // gulp.src([srcDir + assetsDie + 'js/*.js','!' + srcDir + assetsDie + 'js/**/_*.js']) //パーシャルを除外
+
+// @ CMS用
+// ------------------------------
+
+gulp.task('cms.js',function(){
+  jsCompile(config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.js);
+});
+
 
 
 //========================================================================
 // @ $画像最適化
 //========================================================================
 
-gulp.task('imagemin', function(){
+// @ 関数化
+// ------------------------------------------------------------
 
-  var distDir = config.path.dist + config.path.img;
-
+function imagemin(distDir){
   gulp.src(config.path.source + config.path.img +  "/**/*.jpg")
       .pipe($.imagemin())
       .pipe(gulp.dest(distDir));
   gulp.src(config.path.source + config.path.img +  "/**/*.png")
       .pipe($.imagemin())
       .pipe(gulp.dest(distDir));
+}
+
+// @ 静的用
+// ------------------------------
+gulp.task('imagemin', function(){
+  imagemin(config.path.dist + config.path.img)
+});
+
+// @ CMS用
+// ------------------------------
+gulp.task('cms.imagemin', function(){
+  imagemin(config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.img)
 });
 
 
 //========================================================================
-// @ $copy
+// @ html
 //========================================================================
+
+// @ 静的用 | htmlディレクトリのhtmlファイルをdist先にコピー
+// ------------------------------
 
 gulp.task('copy.html',function () {
   var distDir = config.path.dist;
-
   //html
   gulp.src(config.path.source + config.path.html + '**/*.html')
       .pipe(gulp.dest(distDir))
       .pipe(browserSync.stream());
+});
 
+// @ CMS用 | htmlディレクトリのphpファイルをcms/theme先にコピー
+// ------------------------------
+
+// gulp.task('cms.copy.php',function () {
+//   var distDir = config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.img;
+//   //html
+//   gulp.src(config.path.source + config.path.php + '**/*.php')
+//       .pipe(gulp.dest(distDir))
+//       .pipe(browserSync.stream());
+// });
+
+// @ 関数化
+// ------------------------------
+
+function copyAssets(distDir) {
+  //fonts
+  gulp.src(config.path.source + config.path.fonts + '/**/*')
+      .pipe(gulp.dest(distDir + config.path.fonts))
+      .pipe(browserSync.stream());
+
+  //js library
+  gulp.src(config.path.source + config.path.js + '/lib/**/*')
+      .pipe(gulp.dest(distDir + config.path.js + '/lib/'))
+      .pipe(browserSync.stream());
+
+  //svg
+  gulp.src(config.path.source + config.path.svg + '/**/*')
+      .pipe(gulp.dest(distDir + config.path.svg))
+      .pipe(browserSync.stream());
+
+  //file
+  gulp.src(config.path.source + config.path.file + '/**/*')
+      .pipe(gulp.dest(distDir + config.path.file))
+      .pipe(browserSync.stream());
+}
+
+// @ 静的用
+// ------------------------------
+
+gulp.task('copy.assets', function() {
+  copyAssets(config.path.dist);
+});
+
+// @ CMS用
+// ------------------------------
+
+gulp.task('cms.copy.assets', function() {
+  copyAssets(config.path.cms + config.path.cms_dir + config.path.cms_theme);
 });
 
 
-gulp.task('copy', function() {
+//========================================================================
+// ejs | テンプレートエンジン
+//========================================================================
 
-  var distDir = config.path.dist;
+var ejs = require("gulp-ejs");
 
+// @ 関数化
+// ------------------------------
 
-    //img
-    gulp.src(config.path.source + config.path.img + '/**/*')
-        .pipe(gulp.dest(distDir + config.path.img))
-        .pipe(browserSync.stream());
+function ejsFunction(distDir,fileType) {
+  gulp.src([config.path.source + config.path.ejs + "/**/*.ejs",config.path.source + config.path.ejs + '!' + "/**/_*.ejs"])
+      .pipe($.plumber())
+      .pipe($.ejs())
+      .pipe($.rename({extname: fileType}))
+      .pipe(gulp.dest(distDir))
+}
 
-    //fonts
-    gulp.src(config.path.source + config.path.fonts + '/**/*')
-        .pipe(gulp.dest(distDir + config.path.fonts))
-        .pipe(browserSync.stream());
+// @ 静的用
+// ------------------------------
 
-    //js library
-    gulp.src(config.path.source + config.path.js + '/lib/**/*')
-        .pipe(gulp.dest(distDir + config.path.js + '/lib/'))
-        .pipe(browserSync.stream());
-
-    //svg
-    gulp.src(config.path.source + config.path.svg + '/**/*')
-        .pipe(gulp.dest(distDir + config.path.svg))
-        .pipe(browserSync.stream());
-
-    //file
-    gulp.src(config.path.source + config.path.file + '/**/*')
-        .pipe(gulp.dest(distDir + config.path.file))
-        .pipe(browserSync.stream());
+gulp.task("ejs.html", function () {
+  ejsFunction(config.path.dist,'.html');
 });
 
+// @ CMS用 | wordpress
+// ------------------------------
+
+gulp.task("cms.ejs.php", function () {
+  ejsFunction(config.path.cms + config.path.cms_dir + config.path.cms_theme,'.php');
+});
+
+// @ CMS用 | a-blog cms
+// ------------------------------
+
+gulp.task("cms.ejs.html", function () {
+  ejsFunction(config.path.cms + config.path.cms_dir + config.path.cms_theme,'.html');
+});
+
+
+
 //========================================================================
-// @ $browser-sync
+// @ $browser-sync | ローカルサーバー起動
 //========================================================================
+
+// @ 関数化
+// ------------------------------
+
+function bsFunction(distDir) {
+  browserSync({
+    server: {
+      baseDir: distDir
+    }
+  });
+}
+
+// @ 静的用
+// ------------------------------
 
 gulp.task('bs', function() {
-    browserSync({
-        server: {
-            baseDir: distDir,
-        }
-    });
+    bsFunction(config.path.dist);
+});
+
+// @ CMS用
+// ------------------------------
+
+gulp.task('cms.bs', function() {
+  bsFunction(config.path.cms);
 });
 
 //========================================================================
-// @ $bs-reload
+// @ $bs-reload | オートリロード
 //========================================================================
 
 gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-
 //========================================================================
-// ejs
+// @ クリーン | ディレクトリ削除
 //========================================================================
-var ejs = require("gulp-ejs");
 
-    var distDir = config.path.dist;
-    gulp.task("ejs", function () {
-      gulp.src([config.path.source + config.path.ejs + "/**/*.ejs",config.path.source + config.path.ejs + '!' + "/**/_*.ejs"])
-          .pipe($.plumber())
-          .pipe($.ejs())
-          .pipe($.rename({extname: '.html'}))
-          .pipe(gulp.dest(distDir))
+gulp.task('clean', function() {
+  return del([config.path.dist],{force:true});
 });
 
+gulp.task('cms.clean', function() {
+  return del([config.path.cms + config.path.cms_dir + config.path.cms_theme],{force:true});
+});
 
-//========================================================================
-// del : buildで使用
-//========================================================================
-gulp.task('clean', del.bind(null, ['../dist'],{ force:true }));
-
-
-// gulp.task('clean', function () {
-//   // del([
-//   //   config.path.dist,
-//   //   { force:false }
-//   // ]);
-// });
 
 //========================================================================
 // @ $watch
@@ -286,19 +344,59 @@ gulp.task('clean', del.bind(null, ['../dist'],{ force:true }));
 
 gulp.task('watch', function () {
 
-    gulp.watch(config.path.source + config.path.sass + '/**/*.scss', ['scss','hologram','bs-reload']);
-    gulp.watch(config.path.source + config.path.js + '/**/*.js', ['js','bs-reload']);
-    gulp.watch(config.path.source + config.path.html + '/**/*.html', ['copy','bs-reload']);
-    gulp.watch(config.path.source + config.path.ejs + '/**/*.*', ['ejs','bs-reload']);
-    
+  // @ 静的モードがtureの場合、以下のタスクを実行
+  // ------------------------------------------------------------
+
+  if(config.mode.static === true) {
+  // ------------------------------
+  gulp.watch(config.path.source + config.path.sass + '/**/*.scss', ['scss','hologram','bs-reload']);
+  gulp.watch(config.path.source + config.path.js + '/**/*.js', ['js','bs-reload']);
+  // ------------------------------
+  gulp.watch(config.path.source + config.path.html + '/**/*.jpg', ['imagemin', 'bs-reload']);
+  gulp.watch(config.path.source + config.path.html + '/**/*.png', ['imagemin', 'bs-reload']);
+  gulp.watch(config.path.source + config.path.img + '/**/*.html', ['copy.html', 'bs-reload']);
+  // ------------------------------
+  gulp.watch(config.path.source + config.path.fonts + '/**/*.html', ['copy.assets', 'bs-reload']);
+  gulp.watch(config.path.source + config.path.js + '/lib/**/*', ['copy.assets', 'bs-reload']);
+  gulp.watch(config.path.source + config.path.svg + '/**/*', ['copy.assets', 'bs-reload']);
+  gulp.watch(config.path.source + config.path.file + '/**/*', ['copy.assets', 'bs-reload']);
+  // ------------------------------
+    if(conifg.mode.ejs === true) { // ejsモードがtureの場合
+      gulp.watch(config.path.source + config.path.ejs + '/**/*.ejs', ['ejs.html', 'bs-reload']);
+    }
+  }
+
+  // @ CMSモードがtrueの場合
+  // ------------------------------------------------------------
+
+  if(config.mode.cms === true) {
+    // ------------------------------
+    gulp.watch(config.path.source + config.path.sass + '/**/*.scss', ['cms.scss','hologram','bs-reload']);
+    gulp.watch(config.path.source + config.path.js + '/**/*.js', ['cms.js','bs-reload']);
+    // ------------------------------
+    gulp.watch(config.path.source + config.path.html + '/**/*.jpg', ['cms.imagemin', 'bs-reload']);
+    gulp.watch(config.path.source + config.path.html + '/**/*.png', ['cms.imagemin', 'bs-reload']);
+    // gulp.watch(config.path.source + config.path.img + '/**/*.html', ['cms.copy.html', 'bs-reload']);
+    // ------------------------------
+    gulp.watch(config.path.source + config.path.fonts + '/**/*.html', ['cms.copy.assets', 'bs-reload']);
+    gulp.watch(config.path.source + config.path.js + '/lib/**/*', ['cms.copy.assets', 'bs-reload']);
+    gulp.watch(config.path.source + config.path.svg + '/**/*', ['cms.copy.assets', 'bs-reload']);
+    gulp.watch(config.path.source + config.path.file + '/**/*', ['cms.copy.assets', 'bs-reload']);
+    // ------------------------------
+    if(conifg.mode.ejs === true) { // ejsモードがtureの場合
+      if(config.mode.cmstype === "acms") {
+        gulp.watch(config.path.source + config.path.ejs + '/**/*.ejs', ['cms.ejs.html', 'bs-reload']);
+      }else if(config.mode.cmstype === "wordpress"){
+        gulp.watch(config.path.source + config.path.ejs + '/**/*.ejs', ['cms.ejs.php', 'bs-reload']);
+      }
+    }
+  }
 });
 
 
 //========================================================================
+// @ ローカルサーバー起動 監視タスクON
 //========================================================================
-//========================================================================
-//========================================================================
-
 
 gulp.task('run', function (callback) {
     runSequence(
@@ -307,12 +405,41 @@ gulp.task('run', function (callback) {
         callback);
 });
 
+//========================================================================
+// @ 全タスク実行
+//========================================================================
 
 gulp.task('build', function (callback) {
-  return runSequence(
-      'clean',
-      ['scss','hologram','js','ejs','copy.html','copy'],
-      'imagemin',
-      callback
-  );
+  if(config.mode.static === true && config.mode.ejs === false) {
+    return runSequence(
+        'clean',
+        ['scss', 'hologram', 'js', 'copy.html', 'copy.assets'],
+        'imagemin',
+        callback
+    );
+  }else if(config.mode.static === true && config.mode.ejs === true){
+    return runSequence(
+        'clean',
+        ['scss', 'hologram', 'js', 'ejs.html', 'copy.html', 'copy.assets'],
+        'imagemin',
+        callback
+    );
+  }
+
+  if(config.mode.cms === true && config.mode.cmstype === "wordpress") {
+    return runSequence(
+        'cms.clean',
+        ['cms.scss', 'hologram', 'cms.js', 'cms.ejs.php', 'cms.copy.assets'],
+        'imagemin',
+        callback
+    );
+  }
+  if(config.mode.cms === true && config.mode.cmstype === "acms") {
+    return runSequence(
+        'cms.clean',
+        ['cms.scss', 'hologram', 'cms.js', 'cms.ejs.html', 'cms.copy.assets'],
+        'imagemin',
+        callback
+    );
+  }
 });
