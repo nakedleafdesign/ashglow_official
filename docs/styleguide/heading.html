@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--<meta name="viewport" content="width=1200">-->
-  <title itemprop="name"><%= @config['styleguide_name'] %></title>
+  <title itemprop="name">styleguide</title>
   <!-- Standard SEO -->
   <meta name="description" content="福岡県北九州市を拠点に活動をしているギターロックバンドAshglow（アッシュグロウ）2009年に結成、数回のメンバーチェンジを経て、現メンバー体制となる。2015年にレーベルLUZ ORACLEに所属、企業や団体のTVCMやテーマソング等に楽曲が使用される。
 楽曲は主にツインギター・ベース・ドラムというバンドの基本構成を軸に、楽曲により鍵盤やシンセサイザー・ストリング等の音色を取り入れ、多彩な音色を用いて表現している。">
@@ -82,15 +82,67 @@
     <div class="container__inner block-group">
       <section class="block-primary">
         <div class="entry sg-wrap">
-            <% if title %>
+            
             <h1 class="heading01">
-              <%= title %>
+              heading
             </h1>
             <ul>
-              <% @blocks.each do |block| %>
-              <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
-              <% end %>
+              
+              <li><a href="#section-heading01">見出し1</a></li>
+              
             </ul>
-            <% end %>
+            
           <div class="styleguide_content">
 
+<h1 id="section-heading01" class="styleguide">見出し1</h1>
+<div class="example">
+<div class="section-heading01-unit">
+  <h2 class="section-heading01"><span class="section-heading01__inner">質屋リサイクルマートが選ばれるワケ</span></h2>
+  <p class="section-heading01__lead">ご自宅のご不用品をまとめて買取します！</p>
+</div>
+
+</div><div class="codeblock"><pre>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"section-heading01-unit"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"section-heading01"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"section-heading01__inner"</span><span class="nt">&gt;</span>質屋リサイクルマートが選ばれるワケ<span class="nt">&lt;/span&gt;&lt;/h2&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"section-heading01__lead"</span><span class="nt">&gt;</span>ご自宅のご不用品をまとめて買取します！<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</pre></div>        </div> <!--styleguide_content-->
+      </div><!--entry-->
+    </section>
+    <section class="block-secondary">
+      <aside class="side-module side-list-group">
+        <h2 class="side-heading01">SIDE LIST MODULE</h2>
+        <ul class="side-list-body">
+          
+          <li class="side-list-item"><a href="box.html">box</a></li>
+          
+          <li class="side-list-item"><a href="btn-new.html">btn-new</a></li>
+          
+          <li class="side-list-item"><a href="grid.html">grid</a></li>
+          
+          <li class="side-list-item"><a href="images.html">images</a></li>
+          
+          <li class="side-list-item"><a href="utility.html">utility</a></li>
+          
+          <li class="side-list-item"><a href="list.html">list</a></li>
+          
+          <li class="side-list-item"><a href="heading.html">heading</a></li>
+          
+          <li class="side-list-item"><a href="table.html">table</a></li>
+          
+          <li class="side-list-item"><a href="text.html">text</a></li>
+          
+        </ul>
+      </aside>
+    </section>
+  </div>
+</main>
+<a class="to-top js-to-top" href="#"></a>
+<footer class="container--full footer">
+  <div class="container__inner">
+    <p class="f-copy">Copyright © <script type="text/javascript">document.write(new Date().getFullYear());</script> Ashglow All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

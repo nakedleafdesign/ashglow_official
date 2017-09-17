@@ -4,8 +4,8 @@ source: ../assets/scss/
 # スタイルガイドの書き出し先のディレクトリ
 destination: ../../docs/styleguide
 # スタイルガイドのテンプレートがあるディレクトリ
-documentation_assets: templates
+documentation_assets: ./templates
 # Markdown をパースするときに実行する Ruby ファイル
-custom_markdown: markdown_renderer.rb
+custom_markdown: ./markdown_renderer.rb
 # スタイルガイドの名前
-styleguide_name: 'NO TITLE'
+styleguide_name: 'styleguide'

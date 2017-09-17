@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--<meta name="viewport" content="width=1200">-->
-  <title itemprop="name"><%= @config['styleguide_name'] %></title>
+  <title itemprop="name">styleguide</title>
   <!-- Standard SEO -->
   <meta name="description" content="福岡県北九州市を拠点に活動をしているギターロックバンドAshglow（アッシュグロウ）2009年に結成、数回のメンバーチェンジを経て、現メンバー体制となる。2015年にレーベルLUZ ORACLEに所属、企業や団体のTVCMやテーマソング等に楽曲が使用される。
 楽曲は主にツインギター・ベース・ドラムというバンドの基本構成を軸に、楽曲により鍵盤やシンセサイザー・ストリング等の音色を取り入れ、多彩な音色を用いて表現している。">
@@ -82,15 +82,63 @@
     <div class="container__inner block-group">
       <section class="block-primary">
         <div class="entry sg-wrap">
-            <% if title %>
+            
             <h1 class="heading01">
-              <%= title %>
+              btn-new
             </h1>
             <ul>
-              <% @blocks.each do |block| %>
-              <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
-              <% end %>
+              
+              <li><a href="#btn-new">ボタン</a></li>
+              
             </ul>
-            <% end %>
+            
           <div class="styleguide_content">
 
+<h1 id="btn-new" class="styleguide">ボタン</h1>
+
+<h3 class="sg-pattern-title"> sectionTitle </h3>
+<div class="example">
+yourStyle!!
+
+</div><div class="codeblock"><pre>
+yourStyle!!
+
+</pre></div>        </div> <!--styleguide_content-->
+      </div><!--entry-->
+    </section>
+    <section class="block-secondary">
+      <aside class="side-module side-list-group">
+        <h2 class="side-heading01">SIDE LIST MODULE</h2>
+        <ul class="side-list-body">
+          
+          <li class="side-list-item"><a href="box.html">box</a></li>
+          
+          <li class="side-list-item"><a href="btn-new.html">btn-new</a></li>
+          
+          <li class="side-list-item"><a href="grid.html">grid</a></li>
+          
+          <li class="side-list-item"><a href="images.html">images</a></li>
+          
+          <li class="side-list-item"><a href="utility.html">utility</a></li>
+          
+          <li class="side-list-item"><a href="list.html">list</a></li>
+          
+          <li class="side-list-item"><a href="heading.html">heading</a></li>
+          
+          <li class="side-list-item"><a href="table.html">table</a></li>
+          
+          <li class="side-list-item"><a href="text.html">text</a></li>
+          
+        </ul>
+      </aside>
+    </section>
+  </div>
+</main>
+<a class="to-top js-to-top" href="#"></a>
+<footer class="container--full footer">
+  <div class="container__inner">
+    <p class="f-copy">Copyright © <script type="text/javascript">document.write(new Date().getFullYear());</script> Ashglow All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

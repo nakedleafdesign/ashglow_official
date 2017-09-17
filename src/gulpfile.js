@@ -7,6 +7,7 @@ config = {
   "path": {             //各ディレクトリのパス
     "source": "./",
     "dist": "../dist/",
+    "styleguile":"../docs/styleguide/",
     "cms":"../cms/",
     "ejs": "ejs/",
     "sass": "assets/scss/",
@@ -83,6 +84,7 @@ function scssCompile(distDir) {
 
 gulp.task('scss', function(){
   scssCompile(config.path.dist + config.path.css);
+  scssCompile(config.path.styleguile + config.path.css);
 });
 
 // @ CMS用Sassコンパルタスク
@@ -90,6 +92,7 @@ gulp.task('scss', function(){
 
 gulp.task('cms.scss', function(){
   scssCompile(config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.css);
+  scssCompile(config.path.styleguile + config.path.css);
 });
 
 
@@ -142,6 +145,7 @@ function jsCompile(distDir) {
 
 gulp.task('js',function(){
   jsCompile(config.path.dist + config.path.js);
+  jsCompile(config.path.styleguile + config.path.js);
 });
 
 // @ CMS用
@@ -149,6 +153,7 @@ gulp.task('js',function(){
 
 gulp.task('cms.js',function(){
   jsCompile(config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.js);
+  jsCompile(config.path.styleguile + config.path.js);
 });
 
 
@@ -173,12 +178,14 @@ function imagemin(distDir){
 // ------------------------------
 gulp.task('imagemin', function(){
   imagemin(config.path.dist + config.path.img)
+  imagemin(config.path.styleguile + config.path.img)
 });
 
 // @ CMS用
 // ------------------------------
 gulp.task('cms.imagemin', function(){
   imagemin(config.path.cms + config.path.cms_dir + config.path.cms_theme + config.path.img)
+  imagemin(config.path.styleguile + config.path.img)
 });
 
 
