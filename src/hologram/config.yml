@@ -2,7 +2,7 @@
 # スタイルガイドのもとになるスタイルシートファイルがあるディレクトリ
 source: ../assets/scss/
 # スタイルガイドの書き出し先のディレクトリ
-destination: ../../dist/styleguide
+destination: ../../docs/styleguide
 # スタイルガイドのテンプレートがあるディレクトリ
 documentation_assets: templates
 # Markdown をパースするときに実行する Ruby ファイル
