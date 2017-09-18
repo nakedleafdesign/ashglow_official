@@ -64,7 +64,7 @@
 <div class="content-container js-loading-layer__content">
 <header class="container--full header js-header-hidden__header">
   <div class="header__inner<?php if ( is_home() ) { ?>--top<?php } ?> header-group">
-    <a class="h-logo" href="./"></a>
+    <a class="h-logo" href="<?php echo home_url( '/' ); ?>"></a>
     <div class="header-toggle js-header-toggle">
       <span class="top"></span>
       <span class="middle"></span>

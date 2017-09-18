@@ -14,14 +14,21 @@
     <div class="container__inner block-group">
       <section class="block-primary">
         <?php if(has_post_thumbnail()) { echo the_post_thumbnail(); } ?>
-        <div class="entry-wrap">
+        <div class="entry">
         <?php the_content(); ?>
         </div>
         <?php }; ?>
-        <div class="nav-below">
-          <span class="nav-previous"><?php previous_post_link('%link', '古い記事へ'); ?></span>
-          <span class="nav-next"><?php next_post_link('%link', '新しい記事へ'); ?></span>
-        </div><!-- /.nav-below -->
+        <nav class="pager">
+          <?php previous_post_link_plus( array(
+              'format' => '<div class="pager__item pager__item--prev">%link</div>',
+
+              'in_same_tax' => true
+          )); ?>
+          <?php next_post_link_plus( array(
+                  'format' => '<div class="pager__item pager__item--next">%link</div>',
+                  'in_same_tax' => true
+                )); ?>
+        </nav>
         <?php } else { ?>
         <h1 class="heading01">記事が見つかりませんでした。</h1>
         <p>検索で見つかるかもしれません。</p><br />

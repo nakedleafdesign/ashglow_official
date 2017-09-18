@@ -1,4 +1,5 @@
-<?php
+<?php　,peffewfwf
+
 
 date_default_timezone_set('Asia/Tokyo');
 
@@ -472,3 +473,19 @@ function get_term_acf ( $term , $fieldName ){
   $return = get_field( $fieldName, $term . '_'.$term_ID);
   return $return;
 }
+
+// @ 抜粋
+// ------------------------------------------------------------
+
+// 字数を100文字に指定する
+function my_excerpt_mblength($length) {
+  return 30;
+}
+add_filter('excerpt_mblength', 'my_excerpt_mblength');
+
+// 本文からの抜粋末尾の文字列を指定する
+//概要（抜粋）の省略文字
+function my_excerpt_more($more) {
+  return '…';
+}
+add_filter('excerpt_more', 'my_excerpt_more');

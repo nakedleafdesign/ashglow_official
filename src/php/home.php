@@ -121,7 +121,7 @@
                 <p class="top-news-item__date"><?php the_time('Y.m.d'); ?></p>
                 <div class="top-news-item__content">
                   <h1 class="top-news-item-content__ttl"><?php the_title(); ?></h1>
-                  <p class="top-news-item-content__text"><?php the_content('Read more'); ?></p>
+                  <p class="top-news-item-content__text"><?php the_excerpt(); ?></p>
                 </div>
               </a>
             </article>
@@ -136,7 +136,7 @@
             </a>
           </article>
         <?php endif; ?>
-        <?php wp_reset_postdata(); /* WP_Queryのループをリセット */ ?>
+        <?php wp_reset_postdata(); /* クエリリセット */ ?>
 
       </div>
     </article>
