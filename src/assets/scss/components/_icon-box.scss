@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------//
+// @ icon-box
+// ------------------------------------------------------------ */
+
+.icon-box{
+  border-left:1px solid #ccc;
+  margin-left: .5em;
+  padding-left:.7em;
+  .icon-box__item{
+    margin-right: .5em;
+    color: $text-color;
+    &:link,
+    &:active,
+    &:hover,
+    &:visited,
+    &:focus{
+      color: $text-color;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.icon-box__item{
+ 
+ &--twitter .fa{
+   transition: all $hover-transition ease;
+   &:hover {
+     color: #1DA1F2;
+   }
+ }
+  &--instagram .fa{
+    transition: all $hover-transition ease;
+    &:hover{
+      color: #CA2D94;
+    }
+  }
+  &--youtube .fa{
+    transition: all $hover-transition ease;
+    &:hover{
+      color: #cc0000;
+    }
+  }
+}

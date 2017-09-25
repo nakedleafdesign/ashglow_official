@@ -1,0 +1,29 @@
+/* ============================================================ //
+// @ column
+// ============================================================ */
+
+.column-group--responsive02{
+  @include clearfix();
+  .column-item{
+    width: 46%;
+    @include max-media($screen-sm){
+      width: 100%;
+    }
+    &--left{
+      float: left;
+      margin: 0 4% 4% 0;
+    }
+    &--left--fullwidth{
+      @include max-media($screen-sm){
+        width: 110%;
+        margin-left:-5%;
+        margin-right:-5%;
+      }
+    }
+    &--right{
+      margin: 0 0 4% 4%;
+    }
+  }
+}
+
+

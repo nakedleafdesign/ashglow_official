@@ -1,3 +1,56 @@
 /* ============================================================ //
 // @ tab
 // ============================================================ */
+
+/*doc
+---
+title: コントロールタブ
+name: control-tab
+category: tab
+---
+
+<h3 class="sg-pattern-title"> sectionTitle </h3>
+
+```html_example
+
+<div class="control-tab-container">
+  <div class="control-tab">
+    <div class="js-control-tab control-tab-item is-active">JPN</div>
+    <div class="js-control-tab control-tab-item">ENG</div>
+  </div>
+</div>
+
+```
+
+*/
+
+.control-tab-container{
+  text-align: center;
+  margin:0 0 50px;
+}
+
+.control-tab{
+  display: table;
+  border:1px solid #333;
+  border-radius: 3px;
+  margin:0 auto;
+}
+
+.control-tab-item{
+  display: table-cell;
+  border-left:solid 1px #333;
+  line-height: 1;
+  padding:.3em .7em;
+  min-width:60px;
+  text-align: center;
+  &:first-child{
+    border-left:none;
+  }
+  &.is-active{
+    background: #333;
+    color: #fff;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}

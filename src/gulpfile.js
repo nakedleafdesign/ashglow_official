@@ -27,8 +27,8 @@ config = {
     "cms_theme":"wp-content/themes/ashglow/"
   },
   "mode":{
-    static:false,         // 静的モード
-    cms:true,             // CMSモード
+    static:true,         // 静的モード
+    cms:false,             // CMSモード
     cmstype:"wordpress",  // 使用するCMSの種類
     html:false,           // htmlを使用する場合
     ejs:true              // ejsを使用する場合
@@ -405,7 +405,7 @@ gulp.task('watch', function () {
   gulp.watch(config.path.source + config.path.svg + '/**/*', ['copy.assets', 'bs-reload']);
   gulp.watch(config.path.source + config.path.file + '/**/*', ['copy.assets', 'bs-reload']);
   // ------------------------------
-    if(conifg.mode.ejs === true) { // ejsモードがtureの場合
+    if(config.mode.ejs === true) { // ejsモードがtureの場合
       gulp.watch(config.path.source + config.path.ejs + '/**/*.ejs', ['ejs.html', 'bs-reload']);
     }
   }
