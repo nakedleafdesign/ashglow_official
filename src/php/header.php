@@ -72,9 +72,9 @@
     </div>
     <nav class="gnav js-header-toggle-target">
       <ul class="gnav-body">
-        <li class="gnav-item"><a href="/">TOP</a></li>
+        <li class="gnav-item"><a href="<?php echo home_url( '/' ); ?>">TOP</a></li>
         <li class="gnav-item text-strike"><a href="javascript:void(0)">LIVE</a></li>
-        <li class="gnav-item text-strike"><a href="javascript:void(0)">BIOGRAPHY</a></li>
+        <li class="gnav-item text-strike"><a href="<?php echo home_url( '/biography/' ); ?>">BIOGRAPHY</a></li>
         <li class="gnav-item text-strike"><a href="javascript:void(0)">DISCOOGRAPHY</a></li>
         <li class="gnav-item text-strike"><a href="javascript:void(0)">MEDIA</a></li>
         <li class="gnav-item text-strike"><a href="javascript:void(0)">CONTACT</a></li>

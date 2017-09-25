@@ -75,7 +75,7 @@
   </div>
 </header>
 <main class="main-container js-header-hidden__content">
-  <section class="key-visual">
+  <section class="key-visual key-visual--darken" style="background-image: url('./assets/img/biography/img01.jpg');">
     <div class="key-visual__inner">
       <div class="key-visual__unit">
         <h1 class="key-visual__title">Biography</h1>
@@ -85,74 +85,85 @@
   </section>
   <div class="container">
     <div class="container__inner block-group">
-
-        <div class="entry">
-          <h2 class="heading01">見出しレベル1</h2>
-          <div class="text-unit">
-            <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
-            <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
-          </div>
-          <h2 class="heading02">見出しレベル2</h2>
-          <div class="text-unit">
-            <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
-          </div>
-          <h2 class="heading03">見出しレベル3</h2>
-          <div class="text-unit">
-            <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
-          </div>
-          <h2 class="heading01">リスト</h2>
-          <h2 class="heading02">通常リスト</h2>
-          <ul class="list01">
-            <li>Tetsuya Fujinami</li>
-            <li>Kousuke Numa</li>
-            <li>Kousuke Hashiguchi</li>
-            <li>Masato Usuma</li>
-          </ul>
-          <h2 class="heading02">番号付きリスト</h2>
-          <ol class="listnum01">
-            <li>Tetsuya Fujinami</li>
-            <li>Kousuke Numa</li>
-            <li>Kousuke Hashiguchi</li>
-            <li>Masato Usuma</li>
-          </ol>
-          <h2 class="heading01">テーブル</h2>
-          <table class="table01">
-            <tbody>
-            <tr>
-              <th>ボーカル</th>
-              <td>Tetsuya Fujinami</td>
-            </tr>
-            <tr>
-              <th>ギター</th>
-              <td>Masato Usuma</td>
-            </tr>
-            <tr>
-              <th>ベース</th>
-              <td>Kousuke Numa</td>
-            </tr>
-            <tr>
-              <th>ドラム</th>
-              <td>Kousuke Hashiguchi</td>
-            </tr>
-            </tbody>
-          </table>
-          <h2 class="heading01">ボタン</h2>
-          <h2 class="heading02">タイプ01</h2>
-          <div class="btn-group">
-            <a href="" class="btn btn01">Default</a>
-            <a href="" class="btn btn01--primary">Primary</a>
-            <a href="" class="btn btn01--success">Success</a>
-            <a href="" class="btn btn01--warning">Warning</a>
-            <a href="" class="btn btn01--danger">Danger</a>
-          </div>
-          <h2 class="heading02">サイズバリエーション</h2>
-          <div class="btn-group--center">
-            <a href="" class="btn btn01 btn-lg">Default</a>
-            <a href="" class="btn btn01 btn-sm">Default</a>
-            <a href="" class="btn btn01 btn-xs">Default</a>
-
+      <section class="container">
+        <div class="section-heading01-unit sec-brand-heading-unit">
+          <h1 class="section-heading01">「Ashglow」</h1>
+          <p class="section-heading01__lead">アッシュグロウ</p>
+        </div>
+        <div class="column-group--responsive02">
+          <figure class="column-item column-item--left column-item--left--fullwidth img-container--flat "><img class="img-responsive" src="./assets/img/biography/img01.jpg" alt=""></figure>
+          <p>福岡県北九州市を拠点に活動をしているギターロックバンドAshglow（アッシュグロウ）2009年に結成、幾多のメンバーチェンジを経て、2017年現メンバー体制となり活動を一新。<br>主なジャンルはギターロックと表しているがAmbientやEDM、ダンスミュージックなど多種の要素を含めた楽曲となっているので一言では言い表せないのが特徴。<br>構成は主にツインギター・ベース・ドラムというバンドの基本構成を軸に、楽曲により鍵盤やシンセサイザー・ストリング等の音色を取り入れ、バンドサウンドと言う領域に囚われない楽曲制作を行う。<br>またステージングは感情をダイレクトに、等身大に表現したパフォーマンスが特徴。</p>
+          <div class="box01 inline-block">
+            <span class="fz_8em">L to R</span>
+            <p class="mb0">
+            Numa <span class="text-color-sub fz_8em">（Bass&Chorus）</span><span class="icon-box"><a class="icon-box__item icon-box__item--twitter" href="https://twitter.com/kousuke_Ashglow?langja" target="_blank"><i class="fa fa-twitter"></i></a><a class="icon-box__item icon-box__item--instagram" href="https://www.instagram.com/numa_ashglow/?hlja" target="_blank"><i class="fa fa-instagram"></i></span></a><br>
+            FT <span class="text-color-sub fz_8em">（Vocal&Guitar）</span><span class="icon-box"><a class="icon-box__item icon-box__item--twitter" href="https://twitter.com/Fuji_Ashglow?lang=ja" target="_blank"><i class="fa fa-twitter icon-box__item"></i></a><a class="icon-box__item icon-box__item--youtube" href="https://www.youtube.com/channel/UCrrUoq6Ebxs8s9lK11mOKZw" target="_blank"><i class="fa fa-youtube"></i></a></span><br>
+            Kousuke Hashiguchi <span class="text-color-sub fz_8em">（Drums）</span><span class="icon-box"><a class="icon-box__item icon-box__item--twitter" href="https://twitter.com/Ashglow_dr?lang=ja" target="_blank"><i class="fa fa-twitter icon-box__item"></i></a></span><br>
+            Masato Usuma <span class="text-color-sub fz_8em">（Guitar）</span><span class="icon-box"><a class="icon-box__item icon-box__item--twitter" href="https://twitter.com/Ashglow_masato?lang=ja" target="_blank"><i class="fa fa-twitter icon-box__item"></i></a></span><br>
+            </p>
           </div>
         </div>
+      </section>
+      <section class="container">
+        <h1 class="heading01">「history」</h1>
+        <div class="table01">
+          <table class="w100p">
+            <tr>
+              <th>2009年</th>
+              <td>福岡県北九州市にてAshglow結成、同年Bass Numa加入</td>
+            </tr>
+            <tr>
+              <th>2011年</th>
+              <td>1st Mini Album "Scene" をリリース、全15箇所のリリースツアーを行う</td>
+            </tr>
+            <tr>
+              <th>2012年</th>
+              <td>TRIANGLE'12 出演、同年Guitar KomoRi、Drums Ryou Nakashimaが脱退、新たにGuitar Gacky、Drums Takuma Wadaが加入</td>
+            </tr>
+            <tr>
+              <th>2013年</th>
+              <td>>
+                2nd Mini Album "pupa" リリース、全24箇所のツアーを行う</td>
+            </tr>
+            <tr>
+              <th>2014年</th>
+              <td>
+                Drums Takuma Wadaが脱退、サポートDrumsにYuki Ogataを迎え入れる。<br>
+                また同年 Kousuke Hashiguchi が加入<br>
+                1st Digital Single "the Oath"をリリース
+              </td>
+            </tr>
+            <tr>
+              <th>2015年</th>
+              <td>
+                1st Single "ReLight"をリリース、全7箇所のツアーを行う。<br>
+                LUZ ORACLEより"Scene"、"pupa"の両作品を再リリース<br>
+                下記楽曲がCM・テーマソングに起用<br>
+                株式会社ホテル京セラ プレミアムウエディングフェス2016 CM / 夕凪ループ<br>
+                新村畜産 TVCM / 枯れた声<br>
+                鹿児島 ドリームウェーブ プロモーションソング/ Waiting Monster<br>
+                第35回ミニトン全日本選手権大会 ヨットレース プロモーションソング / カケラ<br>
+                Guitar Gackyが脱退
+              </td>
+            </tr>
+            <tr>
+              <th>2016年</th>
+              <td>
+                新たにGuitar Osamu Hatakeyamaが加入
+              </td>
+            </tr>
+            <tr>
+              <th>2017年</th>
+              <td>
+                Guitar Osamu Hatakeyamaが脱退<br>
+                新メンバーとしてGuitar Usuma Masato (ex.SOAR OF LIBERTY)が加入、現メンバー構成に至る。
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+
 
 
     </div>

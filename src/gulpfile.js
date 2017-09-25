@@ -27,11 +27,11 @@ config = {
     "cms_theme":"wp-content/themes/ashglow/"
   },
   "mode":{
-    static:true,         // 静的モード
-    cms:false,             // CMSモード
+    static:false,         // 静的モード
+    cms:true,             // CMSモード
     cmstype:"wordpress",  // 使用するCMSの種類
     html:false,           // htmlを使用する場合
-    ejs:true              // ejsを使用する場合
+    ejs:false              // ejsを使用する場合
   }
 };
 
