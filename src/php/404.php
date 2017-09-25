@@ -19,7 +19,7 @@
           でもそんな時は無理せずちょっと休憩して、また歩き出せばいいんじゃないのかな？
         </p>
         <div class="btn-group--center mt50">
-          <a class="btn btn01" href="">TOPに戻る</a>
+          <a class="btn btn01" href="<?php echo home_url( '/' ); ?>">TOPに戻る</a>
         </div>
       </section>
     </div>
